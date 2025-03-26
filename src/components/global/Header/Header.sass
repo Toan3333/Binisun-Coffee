@@ -1,15 +1,15 @@
 .header
-	@apply  py-4 bg-Neutral-White sticky left-0 right-0 z-100 top-0
+	@apply shadow-Dropshadow-Light bg-Neutral-White sticky left-0 right-0 z-100 top-0
 	.header-nav
-		@apply flex justify-center items-center xl:gap-11 lg:gap-5
+		@apply lg:flex justify-center items-center gap-16 hidden
 		li
 			a
-				@apply text-lg font-semibold text-Neutral-900 pb-1 border-b border-transparent 
-				
-			
+				@apply font-bold text-black pb-1 border-b border-transparent 
 			&[class*='current']
 				&>a
 					@apply text-red-300
+	.header-search-mobile-icon
+		@apply w-10 h-10 bg-Neutral-White rounded-1 inline-flex items-center justify-center text-Primary-Primary_01 text-2xl
 	.header-bar
 		@apply w-12 h-12 flex-shrink-0 inline-flex items-center justify-center text-Neutral-White bg-red-400 backdrop-blur-sm text-2xl
 	.search-bar-container
@@ -41,7 +41,8 @@
 	
 @media (max-width: 1023.98px)
 	.header
-	
+		.header-logo
+			@apply absolute left-2/4 -translate-x-2/4
 		.header-nav-mobile
 			position: absolute
 			top: 100%

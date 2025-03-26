@@ -1,2 +1,66 @@
-header
-	
+header.header
+	form.search-bar-container(action="", class="")
+		.searchbox(class="w-full relative cursor-pointer") 
+			input#search-btn(type="text", class="searchinput", placeholder="Tìm kiếm...", class="px-4 py-2 rounded bg-Neutral-White shadow-lg w-full cursor-pointer")
+			.search-icon(class="absolute top-2/4 -translate-y-2/4 right-0 pr-5 text-Primary-Primary_01")
+				i.fa-sharp.fa-regular.fa-magnifying-glass
+	.heading(class="lg:h-10 h-auto flex-shrink-0 bg-[#004435] flex flex-col items-center justify-center") 
+		p(class="text-center font-light text-Neutral-White") Chào mừng đến với Binisun Coffee. Chúng tôi giao hàng vào thứ Ba và thứ Năm hàng tuần. Miễn phí vận chuyển hóa đơn trên 200.000.
+	.container 
+		.header-main(class="flex items-center justify-between h-20")
+			.header-search-mb(class="lg:hidden items-center gap-base flex") 
+				.header-language(class="flex items-center gap-1") 
+					.header-icon-global(class="text-2xl text-Neutral-950 font-normal") 
+						i.fa-sharp.fa-regular.fa-globe
+					.header-language-list(class="flex items-center gap-1")
+						a(href="#" class="title-18 font-semibold") EN
+						i.fa-solid.fa-caret-down 
+			.header-logo(class="rem:w-[232px] rem:h-[72px]") 
+				a(href="#" class="w-full h-full block")
+					img(src="./img/logo.svg", alt="" class="w-full h-full") 
+			.header-menu 
+				ul.header-nav 
+					li 
+						a(href="#") GIỚI THIỆU
+					li 
+						a(href="#") SẢN PHẨM
+					li 
+						a(href="#") THỰC ĐƠN
+					li 
+						a(href="#") VĂN HOÁ CÀ PHÊ
+					li 
+						a(href="#") TUYỂN DỤNG
+					li 
+						a(href="#") LIÊN HỆ
+			.header-right(class="lg:flex hidden items-center gap-2") 
+				.header-language(class="flex items-center gap-1 text-Neutral-950 font-bold") 
+					span VN
+					.arrow-icon 
+						i.fa-solid.fa-caret-down
+				.header-search(class="w-12 h-12 inline-flex items-center justify-center flex-shrink-0 text-xl") 
+					i.fa-regular.fa-magnifying-glass
+			.header-right-mobile(class="flex lg:hidden items-center gap-2")
+				.header-search-mobile
+					.header-search-mobile-icon
+						i.fa-regular.fa-magnifying-glass 
+				.header-bar-mobile
+					.header-bar 
+						i.fa-solid.fa-bars
+	.header-nav-mobile(class="block lg:hidden")
+		ul(class="flex items-center text-white")
+			li
+				a(href="#") Home
+			li
+				a(href="#") Credo
+			li
+				a(href="#") About us
+			li
+				a(href="#") Industries we serve
+			li
+				a(href="#") News
+			li
+				a(href="#") Sustainability
+			li
+				a(href="#") Careers
+			li
+				a(href="#") Contact

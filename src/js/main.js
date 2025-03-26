@@ -9,13 +9,14 @@ import {
 	countUpInit,
 } from "./helper";
 import { header } from "./header";
+import { showMenu } from "./header-mobile";
 import { swiperInit } from "./swiper";
 
 $(document).ready(function () {
 	setBackgroundElement();
 	header.init();
 	swiperInit();
-	// showMenu();
+	showMenu();
 	// countUpInit();
 	indicatorSlide();
 	console.log("ok");
