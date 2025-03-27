@@ -226,7 +226,7 @@ module.exports = {
 					900: "#3d3d3d",
 					950: "#292929",
 					White: "#ffffff",
-					"500 main": "#818181",
+					"500-main": "#818181",
 					Black: "#000000",
 				},
 				Primary: {
@@ -266,6 +266,7 @@ module.exports = {
 				"linear-2": `linear-gradient(180deg, #D7D7D7 -0.93%, #F3F3F3 15.85%, #FFF 37.21%, #EAEAEA 100.93%)`,
 				"linear-3": `linear-gradient(236deg, #85363D 13.61%, #FFECEC 50.12%, #76222A 85.9%)`,
 				"linear-4": `linear-gradient(90deg, #471116 0%, rgba(173, 41, 54, 0.00) 100%)`,
+				"linear-5": `linear-gradient(67deg, #9fa1a3 29.78%, #fff 54.04%, #cbcccd 70.22%)`,
 			}),
 			backgroundPosition: {
 				"pos-100-0": "100% 0%",

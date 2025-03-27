@@ -1,5 +1,12 @@
 @layer components
 	.item-comp
 		@apply flex
+	.gradient-border
+		border-width: 2px
+		border-style: solid
+		border-image: linear-gradient(67deg, #9fa1a3 29.78%, #fff 54.04%, #cbcccd 70.22%)
+		border-image-slice: 1
 	.button-primary
-		@apply py-3 px-6 rounded-1 border border-Neutral-White font-bold text-Neutral-White hover:bg-Neutral-White hover:text-Primary-Primary_02 inline-flex items-center justify-center
+		@apply py-3 px-6 rounded-1 border-2 border-Primary-Primary_01 font-bold text-Primary-Primary_01 hover:bg-Primary-Primary_01 hover:text-Neutral-White inline-flex items-center justify-center
+		&.white
+			@apply border-Neutral-White border text-Neutral-White hover:bg-Neutral-White hover:text-Primary-Primary_02

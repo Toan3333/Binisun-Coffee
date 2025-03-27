@@ -17,9 +17,8 @@ $(document).ready(function () {
 	header.init();
 	swiperInit();
 	showMenu();
-	// countUpInit();
+	countUpInit();
 	indicatorSlide();
-	console.log("ok");
 });
 
 export function indicatorSlide() {

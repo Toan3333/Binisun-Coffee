@@ -41,3 +41,25 @@ mixin BtnPrimary(text="")
 mixin ButtonPrimary()
 	a(href="#" class="button-primary")
 		span TÌM HIỂU THÊM
+
+mixin CertificateSection()
+	.container
+		.certificate(class="section-py relative")
+			.certificate-heading(class="text-center mb-base")
+				h2(class="title-48 mb-base") Chứng nhận - chứng chỉ
+				.desc(class="text-lg font-normal text-Neutral-950") 
+					p BINISUN đã đạt được nhiều chứng nhận quốc tế và trong nước, khẳng định chất lượng và cam kết với cộng đồng:
+			.certificate-slide(class="relative")
+				.swiper.certificate-swiper 
+					.swiper-wrapper
+						-for(var i = 0; i < 10; i++) 
+							.swiper-slide 
+								.item(class="flex items-center justify-center flex-col") 
+									.image(class="rem:w-[160px] rem:h-[160px] flex-shrink-0") 
+										a(href="#" class="" class="w-full h-full block")
+											img(src="./img/certificate-1.png", alt="" class="w-full h-full") 
+									.content(class="mt-5") 
+										h3(class="text-xl font-normal text-center text-Neutral-700") HACCP
+	.home-3-btn(class="absolute left-2/4 -translate-x-2/4 top-2/4 -translate-y-2/4 w-full flex items-center justify-between rem:px-[172px] z-20 mt-20")
+		.btn.btn-prev.btn-sw-1
+		.btn.btn-next.btn-sw-1
