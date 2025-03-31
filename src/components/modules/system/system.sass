@@ -1,0 +1,31 @@
+.system
+	.select-item
+		select
+			appearance: none
+			-webkit-appearance: none
+			-moz-appearance: none
+			@apply rem:rounded-[60px] py-2 px-3 w-full cursor-pointer bg-Neutral-50 text-Neutral-300
+	.system-search
+		@apply bg-Primary-Primary_01 text-Neutral-White rem:rounded-[60px] py-2 px-3 w-full text-center overflow-hidden whitespace-nowrap text-ellipsis flex justify-end
+		.system-search-item 
+			@apply flex items-center justify-center gap-2 relative text-Neutral-White w-full max-w-[250px]
+			i
+				@apply absolute  top-2/4 -translate-y-2/4 -left-2
+			input
+				@apply bg-Primary-Primary_01 text-Neutral-White rem:rounded-[60px] py-2 px-3 w-full  overflow-hidden whitespace-nowrap text-ellipsis
+				&:focus-visible
+					@apply outline-none
+					@apply border-none
+				&::placeholder
+					@apply text-Neutral-White
+	.system-main
+		@apply mt-6
+		.col-left
+			background-color: rgb(62 190 161)
+			@apply overflow-y-auto rem:h-[770px] overflow-hidden
+		.col-right
+			.map
+				@apply h-full
+				iframe
+					@apply h-full
+			

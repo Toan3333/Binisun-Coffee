@@ -1,0 +1,204 @@
+section.global-breadcrumb
+	.container
+		nav(aria-label="breadcrumbs", class="rank-math-breadcrumb")
+			p
+				a(href="https://oracle.webcanhcam.vn") Trang chủ
+				span(class="separator")  | 
+				span(class="last") Về chúng tôi
+section.product-detail(class="section-py bg-Neutral-50")
+	.container
+		.product-detail-main(class="flex rem:gap-[79px]")
+			.col-left(class="rem:w-[680px] flex gap-5")
+				.product-detail-gallary(class="w-25 relative")
+					.wrapper(class="absolute inset-0 w-full h-full")
+						.swiper.swiper-product-detail-thumb 
+							.swiper-wrapper
+								.swiper-slide 
+									.item(class="w-25 h-25") 
+										img(src="./img/product-2.png", alt="" class="w-full h-full")
+								.swiper-slide 
+									.item(class="w-25 h-25") 
+										img(src="./img/1.jpg", alt="" class="w-full h-full")
+								.swiper-slide 
+									.item(class="w-25 h-25") 
+										img(src="./img/1.jpg", alt="" class="w-full h-full")
+								.swiper-slide 
+									.item(class="w-25 h-25") 
+										img(src="./img/1.jpg", alt="" class="w-full h-full")
+								.swiper-slide 
+									.item(class="w-25 h-25") 
+										img(src="./img/1.jpg", alt="" class="w-full h-full")
+								.swiper-slide 
+									.item(class="w-25 h-25") 
+										img(src="./img/1.jpg", alt="" class="w-full h-full")
+								.swiper-slide 
+									.item(class="w-25 h-25") 
+										img(src="./img/1.jpg", alt="" class="w-full h-full")
+				.product-detail-image(class="w-[calc(100%-5.20833rem-1.04167rem)]")
+					.swiper.swiper-product-detail
+						.swiper-wrapper
+							.swiper-slide
+								.product-box(class="rem:w-[560px] rem:h-[560px] bg-Neutral-White relative")
+									.image(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4") 
+										img(src="./img/product-2.png", alt="")
+							.swiper-slide
+								.product-box(class="rem:w-[560px] rem:h-[560px] bg-Neutral-White relative")
+									.image(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4") 
+										img(src="./img/product-2.png", alt="")
+							.swiper-slide
+								.product-box(class="rem:w-[560px] rem:h-[560px] bg-Neutral-White relative")
+									.image(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4") 
+										img(src="./img/product-2.png", alt="")
+							.swiper-slide
+								.product-box(class="rem:w-[560px] rem:h-[560px] bg-Neutral-White relative")
+									.image(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4") 
+										img(src="./img/product-2.png", alt="")
+						.arrow-button(class="absolute left-2/4 -translate-x-2/4 top-2/4 -translate-y-2/4 w-full flex items-center justify-between z-20 px-5")
+							.btn.btn-prev.btn-sw-1
+							.btn.btn-next.btn-sw-1
+			.col-right(class="w-[calc(100%-35.41666666666667rem-4.114583333333334rem)]") 
+				.product-detail-heading
+					h2(class="title-48 !text-left") ROBUSTA HONEY
+					h3 Rang thủ công
+				.desc(class="text-lg font-normal font-secondary text-Neutral-950 mb-base") 
+					p ROBUSTA HONEY là dòng cà phê sạch, thuần khiết hữu cơ, sản phẩm được chế biến 100% từ hạt Cà phê ROBUSTA được chế biến theo phương pháp HONEY chuẩn Công nghệ Italy. Cà phê RANG THỦ CÔNG được rang bằng tay bởi các Nghệ nhân lành nghề có nhiều năm kinh nghiệm trực tiếp thực hiện tại Bản làng.
+				.product-detail-weight
+					h3(class="text-lg font-bold text-Neutral-950 mb-5") KHỐI LƯỢNG
+					.product-detail-weight-list(class="flex items-center gap-5")
+						span 250g
+						span 250g
+						span 250g
+				.product-detail-btn 
+					+ButtonPrimary()
+				.product-detail-social 
+					a(href="#")
+						i.fa-brands.fa-facebook-f
+					a(href="#")
+						i.fa-brands.fa-linkedin-in
+				
+section.product-detail-2(class="lg:pt-20 pt-10")
+	.container
+		h2(class="title-48 title-tab text-center mb-base") Thông tin sản phẩm
+		.wrap(data-toggle="tabslet")
+			ul.tabslet-tab.product-detail-nav
+				li.active
+					a(href="#tab1") Thông tin sản phẩm
+				li
+					a(href="#tab2") Cách pha cà phê
+				.line(class="absolute translate-y-2/4 left-0 bottom-0 w-0 h-[1px] bg-[#007A5E] transition-all ease-in")
+			.tabslet-content.active#tab1
+				.product-detail-main(class="flex items-center gap-20 mt-base border-b border-b-[#D9D9D9] pb-20")
+					.col-left(class="rem:w-[640px]")
+						.content(class="flex flex-col gap-5 text-lg font-secondary") 
+							.desc 
+								p
+									strong Mô tả: 
+									|Robusta honey rang thủ công là dòng sản phẩm được thu hoạch 100% trái chín, là dòng cà phê sạch, thuần khiết hữu cơ, được trồng trên vùng cao nguyên, được chế biến theo phương pháp honey, kết hợp với bí kíp độc đáo về rang thủ công của người Êđê lưu giữ truyền thống cho tới ngày nay.
+							.weight 
+								p 
+									strong Khối lượng: 
+									|250g, 500g, 1kg
+							.character 
+								h4(class="mb-1") Đặc điểm nổi bật
+								ul 
+									li Hương vị tự nhiên, vị đậm đà hòa quyện cùng chút chua thanh nhẹ
+									li Hương vị tự nhiên, vị đậm đà hòa quyện cùng chút chua thanh nhẹ
+									li Hương vị tự nhiên, vị đậm đà hòa quyện cùng chút chua thanh nhẹ
+							.preserve
+								p 
+									strong Bảo quản: 
+									|Để nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Đậy kín túi sau mỗi lần sử dụng để giữ hương vị tốt nhất.
+							.expiry 
+								p 
+									strong Hạn sử dụng: 
+									|Xem chi tiết trên bao bì sản phẩm
+					.col-right(class="w-[calc(100%-33.333333333333336rem-4.16667rem)]")
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[540_680]")
+								img(src="./img/1.jpg", alt="")
+			.tabslet-content.active#tab2
+				.product-detail-main(class="flex items-center gap-20 mt-base")
+					.col-left(class="rem:w-[640px]")
+						.content(class="flex flex-col gap-5 text-lg font-secondary") 
+							.desc 
+								p
+									strong Mô tả: 
+									|Robusta honey rang thủ công là dòng sản phẩm được thu hoạch 100% trái chín, là dòng cà phê sạch, thuần khiết hữu cơ, được trồng trên vùng cao nguyên, được chế biến theo phương pháp honey, kết hợp với bí kíp độc đáo về rang thủ công của người Êđê lưu giữ truyền thống cho tới ngày nay.
+							.weight 
+								p 
+									strong Khối lượng: 
+									|250g, 500g, 1kg
+							.character 
+								h4(class="mb-1") Đặc điểm nổi bật
+								ul 
+									li Hương vị tự nhiên, vị đậm đà hòa quyện cùng chút chua thanh nhẹ
+									li Hương vị tự nhiên, vị đậm đà hòa quyện cùng chút chua thanh nhẹ
+									li Hương vị tự nhiên, vị đậm đà hòa quyện cùng chút chua thanh nhẹ
+							.preserve
+								p 
+									strong Bảo quản: 
+									|Để nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp. Đậy kín túi sau mỗi lần sử dụng để giữ hương vị tốt nhất.
+							.expiry 
+								p 
+									strong Hạn sử dụng: 
+									|Xem chi tiết trên bao bì sản phẩm
+					.col-right(class="w-[calc(100%-33.333333333333336rem-4.16667rem)]")
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[540_680]")
+								img(src="./img/1.jpg", alt="")
+section.product-detail-3(class="section-py relative")
+	h2(class="title-48 mb-base") Sản phẩm khác 
+	.container
+		.swiper.product-detail-other 
+			.swiper-wrapper
+				.swiper-slide
+					.item
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[440_320]")
+								img(src="./img/product-1.png", alt="")
+						.content(class="mt-5 text-center flex flex-col font-secondary")
+							h3(class="text-lg font-bold text-Neutral-950") NATURAL COFFEE
+							.category(class="font-normal") ROBUSTA 80% - ARABICA 20%
+				.swiper-slide
+					.item
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[440_320]")
+								img(src="./img/product-1.png", alt="")
+						.content(class="mt-5 text-center flex flex-col font-secondary")
+							h3(class="text-lg font-bold text-Neutral-950") NATURAL COFFEE
+							.category(class="font-normal") ROBUSTA 80% - ARABICA 20%
+				.swiper-slide
+					.item
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[440_320]")
+								img(src="./img/product-1.png", alt="")
+						.content(class="mt-5 text-center flex flex-col font-secondary")
+							h3(class="text-lg font-bold text-Neutral-950") NATURAL COFFEE
+							.category(class="font-normal") ROBUSTA 80% - ARABICA 20%
+				.swiper-slide
+					.item
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[440_320]")
+								img(src="./img/product-1.png", alt="")
+						.content(class="mt-5 text-center flex flex-col font-secondary")
+							h3(class="text-lg font-bold text-Neutral-950") NATURAL COFFEE
+							.category(class="font-normal") ROBUSTA 80% - ARABICA 20%
+				.swiper-slide
+					.item
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[440_320]")
+								img(src="./img/product-1.png", alt="")
+						.content(class="mt-5 text-center flex flex-col font-secondary")
+							h3(class="text-lg font-bold text-Neutral-950") NATURAL COFFEE
+							.category(class="font-normal") ROBUSTA 80% - ARABICA 20%
+				.swiper-slide
+					.item
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[440_320]")
+								img(src="./img/product-1.png", alt="")
+						.content(class="mt-5 text-center flex flex-col font-secondary")
+							h3(class="text-lg font-bold text-Neutral-950") NATURAL COFFEE
+							.category(class="font-normal") ROBUSTA 80% - ARABICA 20%
+	.arrow-button(class="absolute left-2/4 -translate-x-2/4 top-2/4 -translate-y-2/4 w-full flex items-center justify-between rem:px-[172px] z-20 mt-10")
+		.btn.btn-prev.btn-sw-1
+		.btn.btn-next.btn-sw-1

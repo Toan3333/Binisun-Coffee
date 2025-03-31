@@ -1,6 +1,59 @@
 @layer components
 	.item-comp
 		@apply flex
+	.form-input-file
+		@apply relative flex items-center
+		@apply w-full rem:h-[56px]  px-5 font-light cursor-pointer
+		input[type="file"]
+			@apply absolute-full text-transparent z-10  cursor-pointer
+			&::-webkit-file-upload-button,&::file-selector-button
+				@apply hidden #{!important}
+		.wpcf7-form-control-wrap
+			@apply static #{!important}
+		&::before
+			content: "Input file CV"
+			@apply text-base text-Primary-Primary_01 font-bold left-5
+		.file-name
+			text-overflow: ellipsis
+			@apply w-full h-full rounded-full border border-transparent px-5 font-light absolute-full mt-0 bg-white text-Primary-Primary_01
+			@apply block px-5 line-clamp-1 place-content-center whitespace-nowrap
+	#form-requirement
+		@apply rem:w-[850px]  relative max-md:w-full
+		.carousel__button
+			position: absolute !important
+			top: 0.5rem !important
+			right: 0.5rem !important
+			width: 32px
+			height: 32px
+			background-color: #007a5e
+			svg
+				@apply rem:w-[16px] rem:h-[16px]
+		h3
+			@apply text-5xl text-Primary-Primary_01 text-center font-bold
+	form.wpcf7-form.submitting
+		button
+			&[type="submit"]
+				@apply pointer-events-none cursor-not-allowed
+	.form-group-style-primary
+		@apply relative cursor-pointer
+		&:focus
+			outline: none !important
+		input
+			@apply w-full px-6 py-3 border border-neutral-300 text-black rem:text-[16px] leading-6 font-normal
+			&:focus
+				outline: none !important
+	.form-submit
+		@apply flex justify-center
+		button
+			@apply px-6 py-3 bg-Primary-Primary_01 text-white rem:text-[16px] leading-6 font-normal
+	.banner
+		.global-breadcrumb
+			@apply bg-transparent block h-auto text-Neutral-White
+			p
+				a
+					@apply text-Neutral-White
+				a,span
+					@apply text-sm whitespace-nowrap text-Neutral-White
 	.gradient-border
 		border-width: 2px
 		border-style: solid
@@ -10,3 +63,56 @@
 		@apply py-3 px-6 rounded-1 border-2 border-Primary-Primary_01 font-bold text-Primary-Primary_01 hover:bg-Primary-Primary_01 hover:text-Neutral-White inline-flex items-center justify-center
 		&.white
 			@apply border-Neutral-White border text-Neutral-White hover:bg-Neutral-White hover:text-Primary-Primary_02
+		&.red
+			@apply bg-Neutral-White  text-Primary-Primary_02 hover:bg-Primary-Primary_01 hover:text-Neutral-White border-none
+
+
+
+	.home-6
+		ul.home-6-nav
+			@apply flex items-center gap-5 rem:mb-[30px]
+			li
+				@apply py-3 px-6 border-2 border-Primary-Primary_01 text-Primary-Primary_01 font-bold
+				&.active
+					@apply bg-Primary-Primary_01 text-Neutral-White
+		.home-6-steps
+			@apply rem:mt-[52px] grid grid-cols-6 
+			.steps .item:not(:last-child)::before
+				content: url("../img/arrow.png")
+				@apply absolute top-2/4 -translate-y-2/4 right-[-3.68rem] 
+			.steps .step.active:not(:last-child)::before
+				content: url("../img/arrow-primary.png")
+			.steps .item.active:not(:last-child)::before
+				content: url("../img/arrow-primary.png")
+			.steps
+				.content
+					@apply text-center
+					h3
+						&.active
+							@apply text-Primary-Primary_01
+				&:last-child
+					.item
+						&::before
+							
+							content: none
+							@apply hidden
+				.item
+					@apply flex  items-center justify-center cursor-pointer flex-shrink-0 relative
+					&.active
+						@apply  text-Neutral-White
+					h3
+						word-wrap: break-word
+						@apply mt-4 whitespace-normal 
+						&.active
+							@apply text-Primary-Primary_01
+					.step
+						@apply w-20 h-20 rounded-full flex-shrink-0 bg-Neutral-100 text-xl font-normal text-Neutral-500-main inline-flex flex-col justify-center items-center relative
+						&.active
+							@apply bg-Primary-Primary_01 text-Neutral-White
+						
+						
+							
+	
+		.col-right
+			.swiper
+				@apply w-full

@@ -1,0 +1,55 @@
+section.system(class="section-py")
+	.container
+		h2(class="text-5xl text-center text-Primary-Primary_02 font-normal mb-base") Hệ thống phân phối
+		.system-list(class="grid grid-cols-3 gap-3")
+			.system-item
+				.select
+					.select-item(class="relative ")
+						select#view(name="view") 
+							option(value="12") Chọn Tỉnh/ Thành phố
+							option(value="12") 24
+							option(value="12") 36 
+							option(value="12") 48 
+						.icon(class="absolute right-3 top-2/4 -translate-y-2/4 cursor-pointer pointer-events-none text-Neutral-300") 
+							i.fa-solid.fa-caret-down
+			.system-item
+				.select
+					.select-item(class="relative ")
+						select#view(name="view") 
+							option(value="12") Chọn Tỉnh/ Thành phố
+							option(value="12") 24
+							option(value="12") 36 
+							option(value="12") 48 
+						.icon(class="absolute right-3 top-2/4 -translate-y-2/4 cursor-pointer pointer-events-none text-Neutral-300") 
+							i.fa-solid.fa-caret-down
+			.system-search
+				.system-search-item 
+					i.fa-solid.fa-magnifying-glass
+					input(type="text" placeholder="Tìm kiếm")
+		.system-main(class="flex")
+			.col-left(class="rem:w-[560px] bg-Primary-Primary_01 py-2 px-6 rounded-tl-xl rounded-bl-xl flex flex-col gap-2")
+				-for(var i = 0; i < 8; i++)
+					.system-main-item(class="flex gap-3 rounded-xl p-4 shadow-Dropshadow-Light bg-Neutral-White border border-Primary-Primary_01")
+						.logo(class="w-18 h-18 rounded-lg border border-Neutral-50 inline-flex items-center justify-center") 
+							.image(class="rem:w-[60px] rem:h-[26px]")
+								a(href="#" class="w-full h-full block")
+									img(src="./img/logo.svg", alt="" class="w-full h-full object-cover") 
+						.system-info 
+							.top(class="mb-3")
+								h3(class="text-lg font-bold text-Neutral-950 mb-2 font-secondary") Nhà thuốc Long Châu
+								.top-main(class="text-sm font-normal mb-2")
+									span Có bán:
+									span(class="address text-Primary-Primary_01") Wellbaby, Osteocare, Wellman
+								.top-address(class="flex gap-2 text-sm") 
+									.icon(class="text-Primary-Primary_01") 
+										i.fa-solid.fa-location-dot
+									span 84 Tổ Dân Phố 7 (Ngã Tư C4), P. Nam Thanh, TP. Điện Biên Phủ Tỉnh Điện Biên
+							.bottom(class="flex items-center justify-between") 
+								.hotline(class="py-1 px-3 rounded-1 bg-Primary-Primary_01 text-Neutral-White flex items-center gap-2") 
+									.icon
+										i.fa-solid.fa-phone
+									.number 1800 6928
+								a(href="#" class="text-[#0068FF] text-sm font-normal") Dẫn đường
+			.col-right(class="w-[calc(100%-29.166666666666668rem)]")
+				.map 
+					iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1860899485405!2d106.66242087596952!3d10.797055089353039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175292e045f31ed%3A0xcc1f3cde54c86d27!2zMzE2IEzDqiBWxINuIFPhu7ksIFBoxrDhu51uZyAxLCBUw6JuIELDrG5oLCBI4buTIENow60gTWluaCA3MDA5MDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1743323585112!5m2!1svi!2s", width="800", height="600", style="border:0;", allowfullscreen, loading="lazy", referrerpolicy="no-referrer-when-downgrade")

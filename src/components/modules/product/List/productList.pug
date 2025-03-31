@@ -1,0 +1,33 @@
+section.product-1(class="relative z-10 rem:h-[491px] " setBackground="./img/bg.png")
+	.product-1-content(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 rem:w-[924px] text-center") 
+		h2(class="title-64 text-Primary-Primary_01") 
+			|sản phẩm
+			br 
+			| binIsun coffee
+	.product-1-people(class="absolute right-[7rem] bottom-0 w-[19rem] h-[23rem]") 
+		img(src="./img/cogai-1.png", alt="" class="w-full h-full")
+section.global-breadcrumb
+	.container
+		nav(aria-label="breadcrumbs", class="rank-math-breadcrumb")
+			p
+				a(href="https://oracle.webcanhcam.vn") Trang chủ
+				span(class="separator")  | 
+				span(class="last") Về chúng tôi
+.product-2(class="section-py")
+	.container 
+		.product-2-main(class="flex flex-col gap-15")
+			-for(var i = 0; i < 7; i++)
+				.product-2-item
+					.col-left(class="rem:w-[375px]")
+						.image 
+							a(href="#" class="img-ratio ratio:pt-[463_375]")
+								img(src="./img/product-2.png", alt="" )
+					.col-right(class="w-[calc(100%-19.53125rem-5.20833rem)]")
+						h3 Robusta Natural coffee
+						.content 
+							.desc 
+								p Cái nôi sinh ra phương pháp chế biến “NATURAL” bắt nguồn từ Ethiopia, họ phát hiện ra quả cà phê có thể sử dụng được đã tiến hành phơi khô chúng để có thể lấy được nhân cách dễ dàng hơn. Chế biến khô này giúp giữ lại lượng đường nhiều nhất trong hạt nên thường được sử dụng với hạt ROBUSTA
+							.desc 
+								p Cái nôi sinh ra phương pháp chế biến “NATURAL” bắt nguồn từ Ethiopia, họ phát hiện ra quả cà phê có thể sử dụng được đã tiến hành phơi khô chúng để có thể lấy được nhân cách dễ dàng hơn. Chế biến khô này giúp giữ lại lượng đường nhiều nhất trong hạt nên thường được sử dụng với hạt ROBUSTA
+						.product-2-btn 
+							+ButtonPrimary()

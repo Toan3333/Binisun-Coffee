@@ -69,7 +69,7 @@ module.exports = {
 		fontFamily: {
 			primary: ["Roboto Condensed", "sans-serif"],
 			secondary: ["Inter Tight", "sans-serif"],
-			secondary2: ["Nunito Sans", "sans-serif"],
+			secondary2: ["Barlow", "sans-serif"],
 			awesome: ['"Font Awesome 6 Pro"'],
 		},
 		fontSize: {
@@ -267,6 +267,8 @@ module.exports = {
 				"linear-3": `linear-gradient(236deg, #85363D 13.61%, #FFECEC 50.12%, #76222A 85.9%)`,
 				"linear-4": `linear-gradient(90deg, #471116 0%, rgba(173, 41, 54, 0.00) 100%)`,
 				"linear-5": `linear-gradient(67deg, #9fa1a3 29.78%, #fff 54.04%, #cbcccd 70.22%)`,
+				"linear-6": `linear-gradient(90deg, #007A5E 0%, #009545 100%)`,
+				"linear-7": `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.80) 100%)`,
 			}),
 			backgroundPosition: {
 				"pos-100-0": "100% 0%",

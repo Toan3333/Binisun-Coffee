@@ -1,0 +1,56 @@
+section.product-1(class="relative z-10 rem:h-[491px] " setBackground="./img/bg.png")
+	.product-1-content(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 rem:w-[924px] text-center") 
+		h2(class="title-64 text-Primary-Primary_01") 
+			|thực đơn
+			br 
+			| binIsun coffee
+	.product-1-people(class="absolute right-[7rem] bottom-0 w-[19rem] h-[23rem]") 
+		img(src="./img/cogai-1.png", alt="" class="w-full h-full")
+section.global-breadcrumb
+	.container
+		nav(aria-label="breadcrumbs", class="rank-math-breadcrumb")
+			p
+				a(href="https://oracle.webcanhcam.vn") Trang chủ
+				span(class="separator")  | 
+				span(class="last") Về chúng tôi
+section.menu(class="rem:pt-[112px] pb-20")
+	.container
+		.menu-main(class="flex gap-base")
+			.col-left(class="w-3/12")
+				.menu-heading(class="rem:py-[10px] px-8 bg-Primary-Primary_01") 
+					h2(class="text-2xl font-bold  text-Neutral-White") THỰC ĐƠN
+				ul.menu-nav 
+					li 
+						a.active(href="#") TẤT CẢ
+					li 
+						a(href="#") Cà phê Robusta Honey phin
+					li 
+						a(href="#") Cà phê Robusta Honey máy
+					li 
+						a(href="#") TRÀ SỮA
+					li 
+						a(href="#") TẤT CẢ
+					li 
+						a(href="#") TẤT CẢ
+					li 
+						a(href="#") TẤT CẢ
+			.col-right(class="w-9/12")
+				.menu-right-heading(class="rem:mb-[49px]")
+					h2(class="title-48 !text-left mb-5") Cà phê Robusta Honey phin 
+					.desc(class="text-lg font-normal font-secondary text-Neutral-950") 
+						p Cà phê Robusta Honey là sự kết hợp hoàn hảo giữa hương vị đậm đà của hạt cà phê Robusta và phương pháp chế biến "Honey" độc đáo. Nhờ giữ lại một phần mật ong tự nhiên từ quả cà phê, sản phẩm mang đến hương vị ngọt ngào nhẹ nhàng, cân bằng hoàn hảo với độ đắng mạnh mẽ đặc trưng của Robusta. 
+				.menu-right-list(class="grid lg:grid-cols-3 md:grid-cols-2 gap-base")
+					-for(var i = 0; i < 9; i++)
+						.menu-item 
+							.menu-item-image(class="rem:w-[320px] rem:h-[320px]")
+								a(href="#" class="w-full h-full block")
+									img(src="./img/menu-1.png", alt=""  class="w-full h-full")
+							.menu-item-content(class="mt-5 text-center font-secondary")
+								h3(class="text-lg font-bold  text-Neutral-950 mb-1") MATCHA CREAM
+								.price(class="text-sm font-bold text-[#292929]") 
+									span Giá: 
+									strong 25.00 VNĐ
+				.menu-pagination(class="flex-center mt-base")
+					span.active 1
+					span 2
+					span 3

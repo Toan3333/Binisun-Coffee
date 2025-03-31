@@ -1,0 +1,22 @@
+.menu
+	ul.menu-nav 
+		@apply py-5 px-8 bg-Neutral-White shadow-Dropshadow-Light flex flex-col rem:gap-[14px]
+		li
+			@apply rem:pb-[14px] border-b border-b-[#D9D9D9] last:border-b-0
+			a
+				@apply text-xl font-medium text-Primary-Primary_02
+				&.active
+					@apply text-Primary-Primary_01
+				&:hover
+					@apply text-Primary-Primary_01
+	.col-right
+		.menu-pagination
+			@apply flex items-center gap-3
+			span
+				@apply gradient-border w-12 h-12 rounded-1 inline-flex items-center justify-center text-black cursor-pointer
+				&.active
+					border-image: unset
+					@apply bg-Primary-Primary_01 text-Neutral-White border-none
+				&:hover
+					border-image: unset
+					@apply bg-Primary-Primary_01 text-Neutral-White border-none transition-all ease-in-out

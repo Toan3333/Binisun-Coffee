@@ -1,0 +1,13 @@
+.new-detail
+	.sticky-share-post
+		ul.logo-share-post
+			@apply list-none
+			li
+				a
+					@apply flex-center lg:w-10 lg:h-10 w-13 h-13 border border-Primary-Primary_01 rounded-full   hover:bg-Primary-Primary_01 hover:text-white bg-Primary-Primary_01 text-Neutral-White
+	.col-right
+		h2
+			@apply relative
+			&::before
+				content: ''
+				@apply absolute bottom-0 w-10 h-[2px] bg-Primary-Primary_01

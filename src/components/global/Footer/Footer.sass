@@ -1,0 +1,32 @@
+.footer
+	.col-right
+		form
+			.footer-form-field
+				@apply relative mb-6
+				input 
+					@apply shadow-Dropshadow-Light rounded-1 py-3 px-5 bg-Neutral-White w-full
+				.footer-icon-send
+					@apply absolute right-5 top-1/2 -translate-y-1/2 text-lg text-Primary-Primary_01
+		.footer-list
+			h3
+				@apply text-2xl font-bold text-Neutral-950 mb-5
+			ul.footer-nav
+				@apply flex flex-col rem:gap-[14px]
+				li
+					a
+						@apply font-secondary text-Neutral-950 font-normal pb-1
+						&:hover
+							@apply text-Primary-Primary_01 border-b border-b-Primary-Primary_01
+			.footer-column-social
+				.social
+					@apply flex items-center rem:gap-[10px]
+					a
+						@apply w-10 h-10 inline-flex items-center justify-center rounded-[2px] text-Primary-Primary_01 bg-Neutral-White
+						&:hover
+							@apply bg-Primary-Primary_01 text-Neutral-White
+	.footer-bottom
+		.footer-bottom-contact
+			@apply mb-5
+			p 
+				span
+					@apply font-normal font-secondary

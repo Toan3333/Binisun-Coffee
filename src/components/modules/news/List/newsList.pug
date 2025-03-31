@@ -1,0 +1,68 @@
+section.global-breadcrumb
+	.container
+		nav(aria-label="breadcrumbs", class="rank-math-breadcrumb")
+			p
+				a(href="https://oracle.webcanhcam.vn") Trang chủ
+				span(class="separator")  | 
+				span(class="last") Về chúng tôi
+.banner 
+	.image 
+		a(href="#" class="img-ratio ratio:pt-[650_1920]")
+			img(src="./img/1.jpg", alt="") 
+section.news(class="section-py font-secondary")
+	.container 
+		.news-main(class="flex items-center justify-between mb-base")
+			.title(class="text-5xl text-Primary-Primary_01 font-secondary") Khỏe cùng Vitabiotics
+			.news-tab 
+				ul.news-nav
+					li 
+						a.active(href="#" class="text-Neutral-950") Tất cả
+					li 
+						a(href="#" class="text-Neutral-950") Tất cả
+					li 
+						a(href="#" class="text-Neutral-950") Tất cả
+					li 
+						a(href="#" class="text-Neutral-950") Tất cả
+		.news-list(class="flex gap-base")
+			.col-left(class="w-6/12")
+				.news-item(class="group")
+					.image
+						a(href="./newsDetail.html" class="img-ratio ratio:pt-[438_680] rounded-5 zoom-img")
+							img(src="./img/1.jpg", alt="")
+					.content(class="rounded-2xl py-2")
+						.top(class="flex items-center gap-2 text-sm pb-3 border-b border-b-Neutral-200") 
+							.tag(class="text-Primary-Primary_01") Thông tin sức khỏe
+							.date(class="text-Neutral-300") 03.06.2024
+						.bottom(class="mt-4") 
+							h3(class="text-2xl font-bold text-Neutral-950 mb-2 group-hover:text-Primary-Primary_01")
+								a(href="#") Cập nhật thông tin trên bao bì gốc của thực phẩm bảo vệ sức khỏe Pregnacare Breast-Feeding 
+			.col-right(class="w-6/12 flex flex-col gap-8")
+				-for(var i = 0; i < 4; i++)
+					.news-item(class="flex items-center gap-5 group")
+						.image(class="rem:w-[204px]")
+							a(href="#" class="img-ratio ratio:pt-[120_204] rounded-5 zoom-img")
+								img(src="./img/1.jpg", alt="") 
+						.news-info(class="w-[calc(100%-10.625rem-1.04167rem)]")
+							.top(class="flex items-center gap-2 text-sm pb-3 border-b border-b-Neutral-200")  
+								.tag(class="text-Primary-Primary_01 pr-3 border-r border-[#E4E5E6]") Thông tin sức khỏe
+								.date(class="text-Neutral-300") 03.06.2024
+							.bottom(class="mt-3")  
+								h3(class="text-xl font-bold text-Neutral-950 mb-2 group-hover:text-Primary-Primary_01") 
+									a(href="#") Cập nhật thông tin trên bao bì gốc của thực phẩm bảo vệ sức khỏe Pregnacare Breast-Feeding 
+		.news-wrap(class="mt-base grid lg:grid-cols-3 md:grid-cols-2 gap-base")
+			-for(var i = 0; i < 6; i++)
+				.news-item(class="group")
+					.image
+						a(href="#" class="img-ratio ratio:pt-[282_440] rounded-5 zoom-img")
+							img(src="./img/1.jpg", alt="")
+					.content(class="py-2") 
+						.top(class="flex items-center gap-2 text-sm pb-3 border-b border-b-Neutral-200")  
+							.tag(class="text-Primary-Primary_01 pr-3 border-r border-[#E4E5E6]") Thông tin sức khỏe
+							.date(class="text-Neutral-300") 03.06.2024
+						.bottom(class="mt-3")  
+							h3(class="text-xl font-bold text-Neutral-950 mb-2 group-hover:text-Primary-Primary_01") 
+								a(href="#") Cập nhật thông tin trên bao bì gốc của thực phẩm bảo vệ sức khỏe Pregnacare Breast-Feeding 
+		.news-pagination(class="flex-center mt-base")
+			span.active 1
+			span 2
+			span 3

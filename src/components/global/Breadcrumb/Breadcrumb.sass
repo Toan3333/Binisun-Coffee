@@ -1,18 +1,35 @@
 .global-breadcrumb
-	@apply bg-[#f1f1f1] border-b border-white
+	@apply bg-Neutral-50 h-[calc(40/1920*100rem)] flex items-center  text-Neutral-900
 	p
-		@apply h-[calc(48/1920*100rem)] flex items-center overflow-auto
+		@apply flex items-center overflow-auto
 		a
 			&:first-child
-				@apply text-0
-				&::before
-					content: '\f015'
-					@apply font-awesome text-sm
+				@apply text-sm 
+				// &::before
+				// 	content: '\f015'
+				// 	@apply font-awesome text-sm 
 		a,span
-			@apply text-sm text-[#333333] whitespace-nowrap
+			@apply text-sm whitespace-nowrap text-Neutral-500-main
 		span.separator
 			@apply text-0 inline-flex
 			&::before
 				content: "\f054"
-				@apply font-awesome font-normal text-sm mx-2
+				@apply font-awesome font-normal text-sm  mx-2
 
+.banner-image
+	.global-breadcrumb
+		@apply text-Neutral-White bg-transparent
+		p
+			a
+				&:first-child
+					@apply text-0
+					&::before
+						content: '\f015'
+						@apply font-awesome text-2xl
+			a,span
+				@apply text-xl whitespace-nowrap
+			span.separator
+				@apply text-0 inline-flex
+				&::before
+					content: "\f054"
+					@apply font-awesome font-normal text-xl mx-4
