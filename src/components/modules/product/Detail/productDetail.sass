@@ -1,10 +1,13 @@
 .product-detail
+	.product-detail-image
+		.swiper
+			@apply h-full
+
 	.product-detail-gallary
 		.wrapper
 			.swiper
 				@apply w-full h-full
-				.swiper-wrapper
-					@apply py-2
+				
 		.swiper-slide
 			@apply flex items-center justify-center
 			&.swiper-slide-thumb-active
@@ -41,3 +44,35 @@
 				@apply pl-5
 				li
 					@apply list-disc marker:text-Neutral-950
+@media (max-width: 1023.98px)
+	.product-detail
+		.product-detail-main 
+			.col-left
+				.product-detail-gallary 
+					.item
+						@apply w-full h-full
+				.product-detail-image
+					.product-box
+						@apply w-full flex items-center justify-center py-5 
+						.image
+							@apply relative left-0 top-0 -translate-y-0 -translate-x-0
+@media (max-width: 767.98px)
+	.product-detail
+		.product-detail-main 
+			
+			.col-left
+				.product-detail-image
+					.btn.btn-sw-1
+						@apply bg-Primary-Primary_01 text-Neutral-White
+						&::before
+							@apply text-Neutral-White
+				.wrapper
+					@apply relative
+				.product-detail-gallary 
+					.item
+						@apply h-[8.2rem]
+						img
+							@apply object-cover
+	.product-detail-2
+		.product-detail-main
+			@apply gap-0

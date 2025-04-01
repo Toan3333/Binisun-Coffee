@@ -1,5 +1,5 @@
 section.product-1(class="relative z-10 rem:h-[491px] " setBackground="./img/bg.png")
-	.product-1-content(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 rem:w-[924px] text-center") 
+	.product-1-content(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 lg:rem:w-[924px] w-full text-center") 
 		h2(class="title-64 text-Primary-Primary_01") 
 			|thực đơn
 			br 
@@ -15,8 +15,8 @@ section.global-breadcrumb
 				span(class="last") Về chúng tôi
 section.menu(class="rem:pt-[112px] pb-20")
 	.container
-		.menu-main(class="flex gap-base")
-			.col-left(class="w-3/12")
+		.menu-main(class="flex flex-col lg:flex-row gap-base")
+			.col-left(class="lg:w-3/12 w-full")
 				.menu-heading(class="rem:py-[10px] px-8 bg-Primary-Primary_01") 
 					h2(class="text-2xl font-bold  text-Neutral-White") THỰC ĐƠN
 				ul.menu-nav 
@@ -34,7 +34,7 @@ section.menu(class="rem:pt-[112px] pb-20")
 						a(href="#") TẤT CẢ
 					li 
 						a(href="#") TẤT CẢ
-			.col-right(class="w-9/12")
+			.col-right(class="lg:w-9/12 w-full")
 				.menu-right-heading(class="rem:mb-[49px]")
 					h2(class="title-48 !text-left mb-5") Cà phê Robusta Honey phin 
 					.desc(class="text-lg font-normal font-secondary text-Neutral-950") 

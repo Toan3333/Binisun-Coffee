@@ -1,7 +1,7 @@
 section.about-6(class="section-py bg-Neutral-50")
 	.container 
-		.about-6-main(class="flex rem:gap-[120px] items-center")
-			.col-left(class="rem:w-[600px] relative")
+		.about-6-main(class="flex flex-col lg:flex-row lg:rem:gap-[120px] gap-base items-center")
+			.col-left(class="lg:rem:w-[600px] w-full relative")
 				.swiper.about-6-swiper
 					.swiper-wrapper
 						.swiper-slide
@@ -16,7 +16,7 @@ section.about-6(class="section-py bg-Neutral-50")
 						.swiper-slide
 							.image(class="img-ratio ratio:pt-[400_680]") 
 								img(src="./img/1.jpg", alt="")  
-				.about-6-btn(class="absolute left-[-6.8rem] w-[44.9rem]   top-2/4 -translate-y-2/4 flex items-center justify-between px-11 z-20")
+				.about-6-btn(class="absolute xl:left-[-6.8rem] xl:rem:w-[940px] w-full  top-2/4 -translate-y-2/4 md:flex hidden items-center justify-between px-11 z-20 lg:rem:mt-[-28px] md:mt-[-2.9rem]")
 					.btn.btn-prev.btn-sw-1
 					.btn.btn-next.btn-sw-1
 				.swiper.about-6-swiper-thumb 	
@@ -33,7 +33,11 @@ section.about-6(class="section-py bg-Neutral-50")
 						.swiper-slide
 							.image(class="img-ratio ratio:pt-[120_213]") 
 								img(src="./img/1.jpg", alt="")
-			.col-right(class="w-[calc(100%-31.25rem-6.25rem)] relative")
+			.arrow-button(class="md:hidden flex  items-center justify-center gap-3")
+				.btn.btn-prev.btn-sw-1
+				.btn.btn-next.btn-sw-1
+			.col-right(class="lg:w-[calc(100%-31.25rem-6.25rem)] relative w-full")
 				h2(class="title-48 !text-left mb-base") Nguồn lực sản xuất
 				.desc 
 					p Nguồn lực của BINISUN đến từ những cánh đồng cà phê rộng lớn tại Tây Nguyên, nơi có điều kiện khí hậu và thổ nhưỡng lý tưởng cho việc trồng cà phê. Chúng tôi sử dụng các phương pháp canh tác thân thiện với môi trường và duy trì mối quan hệ mật thiết với các nông hộ địa phương để đảm bảo nguồn cung cà phê chất lượng.
+			

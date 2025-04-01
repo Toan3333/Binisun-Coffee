@@ -11,3 +11,20 @@
 			@apply flex flex-col gap-3 my-10
 			.desc
 				@apply text-lg font-normal font-secondary text-Neutral-950
+@media (max-width: 1023.98px)
+	.product-1
+		.product-1-people
+			@apply right-[1rem]
+	.product-2
+		.product-2-item
+			@apply flex-col gap-5 pb-5
+			.col-left
+				@apply w-full
+			.col-right
+				@apply w-full
+				.content
+					@apply my-5
+@media (max-width: 767.98px)
+	.product-1
+		.product-1-people
+			@apply w-[10rem] h-[10rem] right-0

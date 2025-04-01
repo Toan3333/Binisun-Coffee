@@ -99,6 +99,7 @@ export function swiperInit() {
 	//   });
 
 	swiperBanner();
+	swiperBannerMobile();
 	swiperHome3();
 	swiperCertificate();
 	swiperHome9();
@@ -127,9 +128,25 @@ function swiperBanner() {
 	});
 }
 
+function swiperBannerMobile() {
+	const swiper = new Swiper(".swiper-home-banner-mobile", {
+		slidesPerView: 1,
+		modules: [Autoplay, EffectFade], // Đảm bảo đã import EffectFade
+		loop: true,
+		effect: "fade",
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		speed: 1500,
+	});
+}
+
 function swiperHome3() {
 	const swiper = new Swiper(".home-3-swiper", {
-		slidesPerView: 1,
+		slidesPerView: 2,
+		spaceBetween: 16,
+
 		modules: [Autoplay, Navigation],
 		loop: true,
 		autoplay: {
@@ -146,6 +163,10 @@ function swiperHome3() {
 			768: {
 				slidesPerView: 2,
 			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 24,
+			},
 			1200: {
 				slidesPerView: 5,
 				spaceBetween: 24,
@@ -156,7 +177,7 @@ function swiperHome3() {
 
 function swiperCertificate() {
 	const swiper = new Swiper(".certificate-swiper", {
-		slidesPerView: 1,
+		slidesPerView: 2,
 		modules: [Autoplay, Navigation],
 		loop: true,
 		autoplay: {
@@ -171,7 +192,12 @@ function swiperCertificate() {
 
 		breakpoints: {
 			768: {
-				slidesPerView: 2,
+				spaceBetween: 12,
+				slidesPerView: 3,
+			},
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 24,
 			},
 			1200: {
 				slidesPerView: 5,
@@ -228,6 +254,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function swiperHome9() {
 	const swiper = new Swiper(".home-9-swiper", {
 		slidesPerView: 2,
+		spaceBetween: 12,
+
 		modules: [Autoplay, Navigation],
 		loop: true,
 		autoplay: {
@@ -243,6 +271,10 @@ function swiperHome9() {
 		breakpoints: {
 			768: {
 				slidesPerView: 3,
+			},
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 24,
 			},
 			1200: {
 				slidesPerView: 7,
@@ -264,7 +296,7 @@ function swiperGallery() {
 
 		breakpoints: {
 			768: {
-				slidesPerView: 4.5,
+				slidesPerView: 4,
 				spaceBetween: 24,
 			},
 			1024: {
@@ -305,7 +337,7 @@ function swiperGallery2() {
 
 		breakpoints: {
 			768: {
-				slidesPerView: 4.5,
+				slidesPerView: 4,
 				spaceBetween: 24,
 			},
 			1024: {
@@ -339,20 +371,26 @@ function swiperProductDetail() {
 	const swiperThumb = new Swiper(".swiper-product-detail-thumb", {
 		modules: [Autoplay],
 		spaceBetween: 12,
-		slidesPerView: 5,
-		direction: "vertical",
+		slidesPerView: 3,
 		freeMode: true,
 		watchSlidesProgress: true,
 		loop: true,
 
 		breakpoints: {
 			768: {
-				slidesPerView: 4.5,
+				slidesPerView: 3,
 				spaceBetween: 24,
+				direction: "vertical",
 			},
 			1024: {
-				spaceBetween: 20,
+				spaceBetween: 15,
 				slidesPerView: 5,
+				direction: "vertical",
+			},
+			1200: {
+				spaceBetween: 15,
+				slidesPerView: 5,
+				direction: "vertical",
 			},
 		},
 	});
@@ -378,7 +416,7 @@ function swiperProductDetail() {
 
 function swiperProductOther() {
 	const swiper = new Swiper(".product-detail-other", {
-		slidesPerView: 1,
+		slidesPerView: 2,
 		modules: [Autoplay, Navigation],
 		loop: true,
 		autoplay: {

@@ -1,4 +1,12 @@
 .footer
+	.footer-fixed
+		ul
+			@apply flex flex-col rem:gap-[19px]
+			li
+				a
+					@apply w-15 h-15 rounded-full bg-Neutral-50 inline-flex items-center justify-center text-2xl text-Primary-Primary_01 border-2 border-Primary-Primary_01 shadow-Dropshadow-Light
+					&:hover
+						@apply bg-Primary-Primary_01 text-Neutral-White
 	.col-right
 		form
 			.footer-form-field
@@ -30,3 +38,8 @@
 			p 
 				span
 					@apply font-normal font-secondary
+@media (max-width: 767.98px)
+	.footer
+		@apply relative
+		// .footer-logo
+		// 	@apply relative left-2/4 -translate-x-2/4

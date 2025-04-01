@@ -9,8 +9,8 @@ section.home-7(class="section-py")
 					a(href="#tab2") Sự kiện
 				.line(class="absolute translate-y-2/4 left-0 bottom-0 w-0 h-[1px] bg-[#007A5E] transition-all ease-in")
 			.tabslet-content.active#tab1
-				.home-7-main(class="flex rem:gap-[112px]")
-					.col-left(class="rem:w-[640px]")
+				.home-7-main(class="flex flex-col lg:flex-row lg:rem:gap-[112px] gap-10")
+					.col-left(class="lg:rem:w-[640px] w-full")
 						.home-7-image 
 							a(href="#" class="img-ratio ratio:pt-[360_640] zoom-img")
 								img(src="./img/1.jpg", alt="")
@@ -20,12 +20,12 @@ section.home-7(class="section-py")
 								a(href="#") Việt Nam có 1 bảo tàng “độc - lạ” được tạp chí thế giới vinh danh: Là điểm check in "triệu view" với kiến trúc đa hình... 
 							.desc(class="text-lg text-Neutral-950 font-secondary")
 								p Mở cửa tất cả các ngày trong tuần, đây là điểm đến độc đáo, nơi tôn vinh lịch sử, văn hóa và nghệ thuật cà phê mà những tín đồ cà phê nên khám phá 1 lần. 
-					.col-right(class="w-[calc(100%-33.333333333333336rem-5.833333333333334rem)] flex flex-col gap-base")
+					.col-right(class="lg:w-[calc(100%-33.333333333333336rem-5.833333333333334rem)] flex flex-col gap-base w-full")
 						.home-7-right-main(class="flex gap-6")
 							.image(class="rem:w-[200px]")
 								a(href="#" class="img-ratio ratio:pt-[113_200] zoom-img")
 									img(src="./img/1.jpg", alt="")
-							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] px-6 rounded-2xl") 
+							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] lg:px-6 rounded-2xl px-0") 
 								.date(class="text-sm text-Neutral-500-main font-normal mb-1 font-secondary") 03.09.2024
 								h3(class="text-xl font-secondary2 font-bold text-Neutral-950") 
 									a(href="#") Không nên uống quá bao nhiêu ly cà phê một ngày? 
@@ -33,7 +33,7 @@ section.home-7(class="section-py")
 							.image(class="rem:w-[200px]")
 								a(href="#" class="img-ratio ratio:pt-[113_200] zoom-img")
 									img(src="./img/1.jpg", alt="")
-							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] px-6 rounded-2xl") 
+							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] lg:px-6 rounded-2xl") 
 								.date(class="text-sm text-Neutral-500-main font-normal mb-1 font-secondary") 03.09.2024
 								h3(class="text-xl font-secondary2 font-bold text-Neutral-950") 
 									a(href="#") Không nên uống quá bao nhiêu ly cà phê một ngày?
@@ -41,7 +41,7 @@ section.home-7(class="section-py")
 							.image(class="rem:w-[200px]")
 								a(href="#" class="img-ratio ratio:pt-[113_200] zoom-img")
 									img(src="./img/1.jpg", alt="")
-							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] px-6 rounded-2xl") 
+							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] lg:px-6 rounded-2xl") 
 								.date(class="text-sm text-Neutral-500-main font-normal mb-1 font-secondary") 03.09.2024
 								h3(class="text-xl font-secondary2 font-bold text-Neutral-950") 
 									a(href="#") Không nên uống quá bao nhiêu ly cà phê một ngày?
@@ -49,15 +49,15 @@ section.home-7(class="section-py")
 							.image(class="rem:w-[200px]")
 								a(href="#" class="img-ratio ratio:pt-[113_200] zoom-img")
 									img(src="./img/1.jpg", alt="")
-							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] px-6 rounded-2xl") 
+							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] lg:px-6 rounded-2xl") 
 								.date(class="text-sm text-Neutral-500-main font-normal mb-1 font-secondary") 03.09.2024
 								h3(class="text-xl font-secondary2 font-bold text-Neutral-950") 
 									a(href="#") Không nên uống quá bao nhiêu ly cà phê một ngày?
 				.home-7-btn(class="flex-center mt-base") 
 					+ButtonPrimary()
 			.tabslet-content#tab2
-				.home-7-main(class="flex rem:gap-[112px]")
-					.col-left(class="rem:w-[640px]")
+				.home-7-main(class="flex flex-col lg:flex-row lg:rem:gap-[112px] gap-10")
+					.col-left(class="lg:rem:w-[640px] w-full")
 						.home-7-image 
 							a(href="#" class="img-ratio ratio:pt-[360_640] zoom-img")
 								img(src="./img/1.jpg", alt="")
@@ -67,12 +67,12 @@ section.home-7(class="section-py")
 								a(href="#") Việt Nam có 1 bảo tàng “độc - lạ” được tạp chí thế giới vinh danh: Là điểm check in "triệu view" với kiến trúc đa hình... 
 							.desc(class="text-lg text-Neutral-950 font-secondary")
 								p Mở cửa tất cả các ngày trong tuần, đây là điểm đến độc đáo, nơi tôn vinh lịch sử, văn hóa và nghệ thuật cà phê mà những tín đồ cà phê nên khám phá 1 lần. 
-					.col-right(class="w-[calc(100%-33.333333333333336rem-5.833333333333334rem)] flex flex-col gap-base")
+					.col-right(class="lg:w-[calc(100%-33.333333333333336rem-5.833333333333334rem)] flex flex-col gap-base w-full")
 						.home-7-right-main(class="flex gap-6")
 							.image(class="rem:w-[200px]")
 								a(href="#" class="img-ratio ratio:pt-[113_200] zoom-img")
 									img(src="./img/1.jpg", alt="")
-							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] px-6 rounded-2xl") 
+							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] lg:px-6 rounded-2xl px-0") 
 								.date(class="text-sm text-Neutral-500-main font-normal mb-1 font-secondary") 03.09.2024
 								h3(class="text-xl font-secondary2 font-bold text-Neutral-950") 
 									a(href="#") Không nên uống quá bao nhiêu ly cà phê một ngày? 
@@ -80,7 +80,7 @@ section.home-7(class="section-py")
 							.image(class="rem:w-[200px]")
 								a(href="#" class="img-ratio ratio:pt-[113_200] zoom-img")
 									img(src="./img/1.jpg", alt="")
-							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] px-6 rounded-2xl") 
+							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] lg:px-6 rounded-2xl") 
 								.date(class="text-sm text-Neutral-500-main font-normal mb-1 font-secondary") 03.09.2024
 								h3(class="text-xl font-secondary2 font-bold text-Neutral-950") 
 									a(href="#") Không nên uống quá bao nhiêu ly cà phê một ngày?
@@ -88,7 +88,7 @@ section.home-7(class="section-py")
 							.image(class="rem:w-[200px]")
 								a(href="#" class="img-ratio ratio:pt-[113_200] zoom-img")
 									img(src="./img/1.jpg", alt="")
-							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] px-6 rounded-2xl") 
+							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] lg:px-6 rounded-2xl") 
 								.date(class="text-sm text-Neutral-500-main font-normal mb-1 font-secondary") 03.09.2024
 								h3(class="text-xl font-secondary2 font-bold text-Neutral-950") 
 									a(href="#") Không nên uống quá bao nhiêu ly cà phê một ngày?
@@ -96,7 +96,7 @@ section.home-7(class="section-py")
 							.image(class="rem:w-[200px]")
 								a(href="#" class="img-ratio ratio:pt-[113_200] zoom-img")
 									img(src="./img/1.jpg", alt="")
-							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] px-6 rounded-2xl") 
+							.content(class="w-[calc(100%-10.416666666666668rem-1.25rem)] lg:px-6 rounded-2xl") 
 								.date(class="text-sm text-Neutral-500-main font-normal mb-1 font-secondary") 03.09.2024
 								h3(class="text-xl font-secondary2 font-bold text-Neutral-950") 
 									a(href="#") Không nên uống quá bao nhiêu ly cà phê một ngày?

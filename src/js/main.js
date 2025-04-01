@@ -18,6 +18,7 @@ $(document).ready(function () {
 	swiperInit();
 	showMenu();
 	countUpInit();
+	buttonToTop();
 	clickTabMoveLine();
 	indicatorSlide();
 	handleTitleTab();

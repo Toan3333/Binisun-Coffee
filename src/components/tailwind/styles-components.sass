@@ -69,6 +69,7 @@
 
 
 	.home-6
+		@apply mt-base
 		ul.home-6-nav
 			@apply flex items-center gap-5 rem:mb-[30px]
 			li
@@ -79,15 +80,20 @@
 			@apply rem:mt-[52px] grid grid-cols-6 
 			.steps .item:not(:last-child)::before
 				content: url("../img/arrow.png")
-				@apply absolute top-2/4 -translate-y-2/4 right-[-3.68rem] 
+				@apply absolute top-2/4 -translate-y-2/4 right-[-3.6rem] 
 			.steps .step.active:not(:last-child)::before
 				content: url("../img/arrow-primary.png")
 			.steps .item.active:not(:last-child)::before
 				content: url("../img/arrow-primary.png")
 			.steps
 				.content
-					@apply text-center
+					@apply text-center rem:w-[220px]
 					h3
+						display: -webkit-box
+						-webkit-line-clamp: 2
+						-webkit-box-orient: vertical
+						word-break: break-word
+						@apply w-full overflow-hidden
 						&.active
 							@apply text-Primary-Primary_01
 				&:last-child
@@ -101,7 +107,7 @@
 					&.active
 						@apply  text-Neutral-White
 					h3
-						word-wrap: break-word
+						
 						@apply mt-4 whitespace-normal 
 						&.active
 							@apply text-Primary-Primary_01
@@ -116,3 +122,18 @@
 		.col-right
 			.swiper
 				@apply w-full
+@media (max-width: 1023.98px)
+	.home-6
+		@apply mt-base
+		.home-6-steps
+			@apply grid-cols-3 gap-5
+			.steps .item:not(:last-child)::before
+				content: none
+			.steps .step.active:not(:last-child)::before
+				content: none
+			.steps .item.active:not(:last-child)::before
+				content: none
+			.steps
+				@apply items-center
+				.content
+					@apply w-full

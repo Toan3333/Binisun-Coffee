@@ -60,12 +60,16 @@ mixin CertificateSection()
 											img(src="./img/certificate-1.png", alt="" class="w-full h-full") 
 									.content(class="mt-5") 
 										h3(class="text-xl font-normal text-center text-Neutral-700") HACCP
-	.home-3-btn(class="absolute left-2/4 -translate-x-2/4 top-2/4 -translate-y-2/4 w-full flex items-center justify-between rem:px-[172px] z-20 mt-20")
+			.home-3-btn-mobile(class="xl:hidden flex items-center justify-center mt-5 gap-3")
+				.btn.btn-prev.btn-sw-1
+				.btn.btn-next.btn-sw-1
+	.home-3-btn(class="absolute left-2/4 -translate-x-2/4 top-2/4 -translate-y-2/4 w-full xl:flex items-center justify-between rem:px-[172px] z-20 mt-20 hidden")
 		.btn.btn-prev.btn-sw-1
 		.btn.btn-next.btn-sw-1
+
 mixin processSection()
 	section.home-6
-		.home-6-heading(class="rem:w-[1008px] text-center mx-auto") 
+		.home-6-heading(class="lg:rem:w-[1008px] w-full text-center mx-auto") 
 			h2(class="title-48 mb-base") Quy trình sản xuất
 		.wrap(data-toggle="tabslet" class="flex justify-center flex-col items-center")
 			ul.tabslet-tab.home-6-nav
@@ -74,7 +78,8 @@ mixin processSection()
 				li
 					a(href="#tab2") Phương pháp Natural
 			.tabslet-content.active#tab1
-				p(class="text-lg text-Neutral-800 font-secondary") Tại BINISUN, chúng tôi áp dụng hai phương pháp chế biến cà phê Natural và Honey, đảm bảo giữ nguyên hương vị tự nhiên và chất lượng của từng hạt cà phê từ Tây Nguyên.
+				.desc(class="text-center text-lg text-Neutral-800 font-secondary lg:rem:w-[1008px] w-full  mx-auto px-4 lg:px-0")
+					p Tại BINISUN, chúng tôi áp dụng hai phương pháp chế biến cà phê Natural và Honey, đảm bảo giữ nguyên hương vị tự nhiên và chất lượng của từng hạt cà phê từ Tây Nguyên.
 				.home-6-steps
 					.steps(class="flex flex-col w-full")
 						.item(class="flex items-center")
@@ -118,11 +123,11 @@ mixin processSection()
 							h3 Tiêu đề 4
 			.tabslet-content#tab2
 				p ok
-		.home-6-main(class="flex rem:mt-[50px]")
-			.col-left(class="w-6/12")
+		.home-6-main(class="flex flex-col-reverse lg:flex-row rem:mt-[50px]")
+			.col-left(class="lg:w-6/12 w-full")
 				video(src="./img/video.mp4" autoplay, muted, controls, loop class="w-full") 
-			.col-right(class="w-6/12 bg-Neutral-50")
-				.col-right-content(class="pl-25 rem:pt-[67px] pb-17 h-full flex flex-col") 
+			.col-right(class="lg:w-6/12 w-full bg-Neutral-50")
+				.col-right-content(class="lg:pl-25 rem:pt-[67px] lg:pb-17 p-10 h-full flex flex-col") 
 					.swiper.swiper-steps 
 						.swiper-wrapper 
 							.swiper-slide
@@ -155,6 +160,6 @@ mixin processSection()
 								h3(class="text-5xl text-Primary-Primary_01 font-bold mb-5") Tách vỏ quả
 								.desc(class="font-secondary text-lg font-normal text-Neutral-950") 
 									p Dùng máy chuyên dụng để tách vỏ nhưng vẫn giữ lại lớp nhầy quý giá.
-					.home-6-btn(class="mt-auto flex gap-3") 
+					.home-6-btn(class="lg:mt-auto mt-5 flex gap-3") 
 						.btn.btn-prev.btn-sw-1
 						.btn.btn-next.btn-sw-1

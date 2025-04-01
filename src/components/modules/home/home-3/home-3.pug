@@ -1,6 +1,6 @@
-section.home-3(setBackground="./img/bg-3.png" class="pt-25 ")
+section.home-3(setBackground="./img/bg-3.png" class="lg:pt-25 pt-10 ")
 	h2(class="title-48 mb-base") SẢN PHẨM NỔI BẬT
-	.home-3-slide(class="rem:px-[112px] relative")
+	.home-3-slide(class="lg:rem:px-[112px] px-10 relative")
 		.swiper.home-3-swiper 
 			.swiper-wrapper 
 				-for(var i = 0; i < 8; i++)
@@ -10,7 +10,10 @@ section.home-3(setBackground="./img/bg-3.png" class="pt-25 ")
 								img(src="./img/product-1.png", alt="") 
 						.content(class="mt-5 text-center") 
 							h3(class="text-lg font-bold text-Neutral-950") Robusta Natural coffee
-		.home-3-btn(class="absolute left-2/4 -translate-x-2/4 top-2/4 -translate-y-2/4 w-full flex items-center justify-between px-11 z-20")
+		.home-3-btn(class="absolute left-2/4 -translate-x-2/4 top-2/4 -translate-y-2/4 w-full lg:flex items-center justify-between px-11 z-20 hidden")
+			.btn.btn-prev.btn-sw-1
+			.btn.btn-next.btn-sw-1
+		.home-3-btn-mobile(class="lg:hidden flex items-center justify-center gap-3 my-5")
 			.btn.btn-prev.btn-sw-1
 			.btn.btn-next.btn-sw-1
 	.home-3-text 
