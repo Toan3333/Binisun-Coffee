@@ -371,7 +371,7 @@ function swiperProductDetail() {
 	const swiperThumb = new Swiper(".swiper-product-detail-thumb", {
 		modules: [Autoplay],
 		spaceBetween: 12,
-		slidesPerView: 3,
+		slidesPerView: 3.5,
 		freeMode: true,
 		watchSlidesProgress: true,
 		loop: true,
