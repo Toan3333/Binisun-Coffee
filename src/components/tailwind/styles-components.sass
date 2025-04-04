@@ -1,6 +1,20 @@
 @layer components
 	.item-comp
 		@apply flex
+
+	.page-numbers.current span
+		border-image: unset !important
+		@apply border-none #{!important}
+	ul.page-numbers
+		@apply justify-center
+		li
+			
+			.page-number
+				@apply gradient-border w-12 h-12 rounded-1 inline-flex items-center justify-center  cursor-pointer
+				span
+					&.current
+						border-image: unset !important
+						@apply bg-Primary-Primary_01 text-Neutral-White border-none #{!important}
 	.pagination
 		@apply flex items-center gap-3
 		span

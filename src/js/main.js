@@ -22,6 +22,7 @@ $(document).ready(function () {
 	clickTabMoveLine();
 	indicatorSlide();
 	handleTitleTab();
+
 	watchObserveInputFile();
 	handleTitleTab2();
 	loadMoreJobs();
