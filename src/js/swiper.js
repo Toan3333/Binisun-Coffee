@@ -367,81 +367,60 @@ function swiperGallery2() {
 }
 
 function swiperProductDetail() {
-	const colLefts = document.querySelectorAll(".col-left");
-	const swiperInstances = [];
-	colLefts.forEach((colLeft) => {
-		const thumb = colLeft.querySelector(".swiper-product-detail-thumb");
-		const main = colLeft.querySelector(".swiper-product-detail");
-		const prevBtn = colLeft.querySelector(".btn-prev");
-		const nextBtn = colLeft.querySelector(".btn-next");
+	const colLeft = document.querySelector(".col-left");
+	if (!colLeft) return;
 
-		const swiperThumb = new Swiper(thumb, {
-			modules: [Autoplay],
-			spaceBetween: 12,
-			slidesPerView: 3.5,
-			freeMode: true,
-			watchSlidesProgress: true,
-			loop: false,
-			breakpoints: {
-				768: {
-					slidesPerView: 3,
-					spaceBetween: 24,
-					direction: "vertical",
-				},
-				1024: {
-					spaceBetween: 15,
-					slidesPerView: 5,
-					direction: "vertical",
-				},
-				1200: {
-					spaceBetween: 15,
-					slidesPerView: 5,
-					direction: "vertical",
-				},
-			},
-		});
+	const thumb = colLeft.querySelector(".swiper-product-detail-thumb");
+	const main = colLeft.querySelector(".swiper-product-detail");
+	const prevBtn = colLeft.querySelector(".btn-prev");
+	const nextBtn = colLeft.querySelector(".btn-next");
 
-		const swiperDetail = new Swiper(main, {
-			spaceBetween: 10,
-			loop: false,
-			modules: [Autoplay, Navigation, Thumbs],
-			thumbs: {
-				swiper: swiperThumb,
+	const swiperThumb = new Swiper(thumb, {
+		modules: [Autoplay],
+		spaceBetween: 12,
+		slidesPerView: 3.5,
+		freeMode: true,
+		watchSlidesProgress: true,
+		loop: false,
+		breakpoints: {
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 24,
+				direction: "vertical",
 			},
-			navigation: {
-				nextEl: nextBtn,
-				prevEl: prevBtn,
+			1024: {
+				spaceBetween: 15,
+				slidesPerView: 5,
+				direction: "vertical",
 			},
-		});
-
-		swiperInstances.push({
-			index: Number(colLeft.dataset.index),
-			element: colLeft,
-			swiperThumb,
-			swiperDetail,
-		});
+			1200: {
+				spaceBetween: 15,
+				slidesPerView: 5,
+				direction: "vertical",
+			},
+		},
 	});
 
-	window.productDetailSwiper = swiperInstances || [];
+	const swiperDetail = new Swiper(main, {
+		spaceBetween: 10,
+		loop: false,
+		modules: [Autoplay, Navigation, Thumbs],
+		thumbs: {
+			swiper: swiperThumb,
+		},
+		navigation: {
+			nextEl: nextBtn,
+			prevEl: prevBtn,
+		},
+	});
+
+	window.productDetailSwiper = {
+		element: colLeft,
+		swiperThumb,
+		swiperDetail,
+	};
 
 	const weightOptions = document.querySelectorAll(".product-detail-weight-list span");
-
-	weightOptions.forEach((el, index) => {
-		el.setAttribute("data-index", index);
-		el.addEventListener("click", () => {
-			weightOptions.forEach((s) => s.classList.remove("active"));
-			el.classList.add("active");
-
-			swiperInstances.forEach((instance) => {
-				if (instance.index === index) {
-					instance.element.classList.remove("hidden");
-				} else {
-					instance.element.classList.add("hidden");
-				}
-			});
-		});
-	});
-
 	if (weightOptions.length > 0) {
 		weightOptions[0].classList.add("active");
 	}
