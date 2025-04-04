@@ -24,7 +24,9 @@
 		.product-detail-weight
 			@apply mb-base
 			span
-				@apply rounded-1 rem:py-[6px] px-4 border border-Primary-Primary_01 font-secondary text-lg font-semibold text-Primary-Primary_01
+				@apply rounded-1 rem:py-[6px] px-4 border border-Primary-Primary_01 font-secondary text-lg font-semibold text-Primary-Primary_01 cursor-pointer
+				&.active
+					@apply bg-Primary-Primary_01 text-Neutral-White
 		.product-detail-social 
 			@apply mt-base flex items-center rem:gap-[10px]
 			a

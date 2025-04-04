@@ -1,6 +1,16 @@
 @layer components
 	.item-comp
 		@apply flex
+	.pagination
+		@apply flex items-center gap-3
+		span
+			@apply gradient-border w-12 h-12 rounded-1 inline-flex items-center justify-center text-black cursor-pointer
+			&.active
+				border-image: unset
+				@apply bg-Primary-Primary_01 text-Neutral-White border-none
+			&:hover
+				border-image: unset
+				@apply bg-Primary-Primary_01 text-Neutral-White border-none transition-all ease-in-out
 	.form-input-file
 		@apply relative flex items-center
 		@apply w-full rem:h-[56px]  px-5 font-light cursor-pointer

@@ -367,51 +367,87 @@ function swiperGallery2() {
 }
 
 function swiperProductDetail() {
-	// Khởi tạo Swiper Thumb trước
-	const swiperThumb = new Swiper(".swiper-product-detail-thumb", {
-		modules: [Autoplay],
-		spaceBetween: 12,
-		slidesPerView: 3.5,
-		freeMode: true,
-		watchSlidesProgress: true,
-		loop: true,
+	const colLefts = document.querySelectorAll(".col-left");
+	const swiperInstances = [];
 
-		breakpoints: {
-			768: {
-				slidesPerView: 3,
-				spaceBetween: 24,
-				direction: "vertical",
+	colLefts.forEach((colLeft) => {
+		const thumb = colLeft.querySelector(".swiper-product-detail-thumb");
+		const main = colLeft.querySelector(".swiper-product-detail");
+		const prevBtn = colLeft.querySelector(".btn-prev");
+		const nextBtn = colLeft.querySelector(".btn-next");
+
+		const swiperThumb = new Swiper(thumb, {
+			modules: [Autoplay],
+			spaceBetween: 12,
+			slidesPerView: 3.5,
+			freeMode: true,
+			watchSlidesProgress: true,
+			loop: false,
+			breakpoints: {
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 24,
+					direction: "vertical",
+				},
+				1024: {
+					spaceBetween: 15,
+					slidesPerView: 5,
+					direction: "vertical",
+				},
+				1200: {
+					spaceBetween: 15,
+					slidesPerView: 5,
+					direction: "vertical",
+				},
 			},
-			1024: {
-				spaceBetween: 15,
-				slidesPerView: 5,
-				direction: "vertical",
+		});
+
+		const swiperDetail = new Swiper(main, {
+			spaceBetween: 10,
+			loop: false,
+			modules: [Autoplay, Navigation, Thumbs],
+			thumbs: {
+				swiper: swiperThumb,
 			},
-			1200: {
-				spaceBetween: 15,
-				slidesPerView: 5,
-				direction: "vertical",
+			navigation: {
+				nextEl: nextBtn,
+				prevEl: prevBtn,
 			},
-		},
+		});
+
+		swiperInstances.push({
+			index: Number(colLeft.dataset.index),
+			element: colLeft,
+			swiperThumb,
+			swiperDetail,
+		});
 	});
 
-	// Khởi tạo Swiper chính
-	const swiperDetail = new Swiper(".swiper-product-detail", {
-		spaceBetween: 10,
-		loop: true,
-		modules: [Autoplay, Navigation, Thumbs],
-		thumbs: {
-			swiper: swiperThumb, // Liên kết thumbnail với Swiper chính
-		},
-		// autoplay: {
-		// 	delay: 3000,
-		// 	disableOnInteraction: false,
-		// },
-		navigation: {
-			nextEl: ".product-detail-image .btn-next",
-			prevEl: ".product-detail-image .btn-prev",
-		},
+	// 👉 Xử lý chọn trọng lượng
+	const weightOptions = document.querySelectorAll(".product-detail-weight-list span");
+
+	weightOptions.forEach((el, index) => {
+		el.setAttribute("data-index", index);
+		el.addEventListener("click", () => {
+			// Bỏ active cũ + thêm mới
+			weightOptions.forEach((s) => s.classList.remove("active"));
+			el.classList.add("active");
+
+			// Hiện đúng col-left theo index, ẩn cái còn lại
+			swiperInstances.forEach((instance) => {
+				if (instance.index === index) {
+					instance.element.classList.remove("hidden");
+				} else {
+					instance.element.classList.add("hidden");
+				}
+			});
+		});
 	});
+
+	// 👉 Gắn mặc định active cho trọng lượng đầu tiên
+	if (weightOptions.length > 0) {
+		weightOptions[0].classList.add("active");
+	}
 }
 
 function swiperProductOther() {
