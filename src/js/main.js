@@ -20,7 +20,7 @@ $(document).ready(function () {
 	countUpInit();
 
 	buttonToTop();
-	clickTabMoveLine();
+	// clickTabMoveLine();
 	indicatorSlide();
 	handleTitleTab();
 
@@ -39,48 +39,59 @@ $(document).ready(function () {
 	});
 });
 
-function clickTabMoveLine() {
-	if (!$(".tabslet-tab").length) return;
+function initTabsWithLine(tabWrapperSelector) {
+	const $tabWrapper = $(tabWrapperSelector);
+	if (!$tabWrapper.length) return;
 
-	function updateLine($tab) {
-		if (!$tab.length) return;
-		var width = $tab.outerWidth();
-		var position = $tab.position().left;
+	const $line = $tabWrapper.find(".line");
 
-		$(".line").css({
+	// Handle click tab
+	$tabWrapper.find("li a").on("click", function (e) {
+		e.preventDefault();
+
+		const $a = $(this);
+		const $li = $a.parent();
+		const targetTab = $a.attr("href");
+
+		// Active state
+		$tabWrapper.find("li").removeClass("active");
+		$li.addClass("active");
+
+		// Content toggle
+		$(".tabslet-content").removeClass("active");
+		$(targetTab).addClass("active");
+
+		// Move line
+		const width = $a.outerWidth();
+		const position = $a.position().left;
+
+		$line.css({
 			width: width,
 			left: position,
 		});
-	}
-
-	// Cập nhật line khi click vào tab
-	$(".tabslet-tab li a").click(function (e) {
-		e.preventDefault();
-		var $li = $(this).parent();
-		updateLine($li);
-
-		$(".tabslet-tab li").removeClass("active");
-		$li.addClass("active");
-
-		var targetTab = $(this).attr("href");
-		$(".tabslet-content").removeClass("active");
-		$(targetTab).addClass("active");
 	});
 
-	// Cập nhật vị trí line khi trang tải xong
+	// Set initial position after page load
 	$(window).on("load", function () {
 		requestAnimationFrame(() => {
-			var $activeTab = $(".tabslet-tab li.active");
-			if ($activeTab.length) {
-				updateLine($activeTab);
-			} else {
-				var $firstTab = $(".tabslet-tab li").first();
-				$firstTab.addClass("active");
-				updateLine($firstTab);
+			const $activeLi = $tabWrapper.find("li.active");
+			const $activeA = $activeLi.find("a");
+
+			if ($activeA.length) {
+				const width = $activeA.outerWidth();
+				const position = $activeA.position().left;
+
+				$line.css({
+					width: width,
+					left: position,
+				});
 			}
 		});
 	});
 }
+
+initTabsWithLine(".tabslet-tab.home-7-nav");
+initTabsWithLine(".tabslet-tab.product-detail-nav");
 
 function loadMoreJobs() {
 	const btnMore = document.querySelector(".more");

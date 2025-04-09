@@ -209,47 +209,172 @@ function swiperCertificate() {
 
 // function swiperSteps() {
 // }
-document.addEventListener("DOMContentLoaded", function () {
-	// Khởi tạo Swiper
-	const swiper = new Swiper(".swiper-steps", {
+const swipers = {}; // Quản lý swiper theo tabId
+
+function initSwiper(tabId) {
+	const swiperContainer = document.querySelector(`#${tabId} .swiper-steps`);
+	if (!swiperContainer) return;
+
+	swipers[tabId] = new Swiper(swiperContainer, {
 		modules: [Autoplay, Navigation],
-		loop: false,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		autoHeight: true,
 		navigation: {
-			nextEl: ".col-right-content .btn-next",
-			prevEl: ".col-right-content .btn-prev",
-		},
-		on: {
-			slideChange: function () {
-				updateActiveStep(swiper.activeIndex);
-			},
+			nextEl: `#${tabId} .btn-next`,
+			prevEl: `#${tabId} .btn-prev`,
 		},
 	});
+}
 
-	// Hàm cập nhật trạng thái active
-	function updateActiveStep(index) {
-		const steps = document.querySelectorAll(".home-6-steps .step");
-		const items = document.querySelectorAll(".home-6-steps .item");
-		const titles = document.querySelectorAll(".steps h3");
-		const contents = document.querySelectorAll(".home-6-steps .content");
-
-		// Giữ trạng thái active cho tất cả bước trước đó và bước hiện tại
-		steps.forEach((step, i) => step.classList.toggle("active", i <= index));
-		items.forEach((item, i) => item.classList.toggle("active", i <= index));
-		titles.forEach((title, i) => title.classList.toggle("active", i <= index));
-		contents.forEach((content, i) => content.classList.toggle("active", i === index));
+// Gọi khi tabs được kích hoạt
+function handleTabShow(tabId) {
+	if (!swipers[tabId]) {
+		initSwiper(tabId);
 	}
+}
 
-	// Thiết lập bước đầu tiên là active
-	updateActiveStep(swiper.activeIndex);
+document.querySelectorAll(".tabslet-tab li a").forEach((tabLink) => {
+	tabLink.addEventListener("click", (e) => {
+		e.preventDefault();
 
-	// Click vào step thì giữ active cho bước đó và tất cả bước trước
-	document.querySelectorAll(".home-6-steps .step").forEach((step, index) => {
+		const href = tabLink.getAttribute("href"); // eg. "#tab2"
+		const tabId = href.substring(1); // remove the #
+
+		// Show tab manually (tuỳ bạn nếu dùng plugin tabslet)
+		document.querySelectorAll(".tabslet-content").forEach((el) => {
+			el.classList.remove("active");
+		});
+		document.querySelector(href).classList.add("active");
+
+		// Call init swiper
+		handleTabShow(tabId);
+	});
+});
+
+// Bắt click vào các step để chuyển slide
+document.querySelectorAll(".tabslet-content").forEach((tab) => {
+	const tabId = tab.id;
+	const steps = tab.querySelectorAll(".home-6-steps .step");
+
+	steps.forEach((step, index) => {
 		step.addEventListener("click", () => {
-			swiper.slideTo(index);
-			updateActiveStep(index);
+			if (!swipers[tabId]) {
+				initSwiper(tabId);
+
+				setTimeout(() => {
+					swipers[tabId].slideTo(index);
+					updateActiveStep(tabId, index);
+				}, 100); // delay để Swiper kịp render DOM
+			} else {
+				swipers[tabId].slideTo(index);
+				updateActiveStep(tabId, index);
+			}
 		});
 	});
 });
+
+function updateActiveStep(tabId, activeIndex) {
+	const stepEls = document.querySelectorAll(`#${tabId} .step`);
+	stepEls.forEach((step, idx) => {
+		if (idx === activeIndex) {
+			step.classList.add("active");
+		} else {
+			step.classList.remove("active");
+		}
+	});
+}
+
+// Auto init tab1 swiper khi trang load
+document.addEventListener("DOMContentLoaded", () => {
+	handleTabShow("tab1");
+});
+
+// document.addEventListener("DOMContentLoaded", function () {
+// 	const tabs = document.querySelectorAll(".tabslet-tab a");
+// 	const allMainSections = document.querySelectorAll(".home-6-main");
+// 	const swipers = {}; // Lưu swiper của từng tab (key theo id)
+
+// 	// Ẩn hết, hiện cái đầu tiên
+// 	allMainSections.forEach((section) => {
+// 		if (section.dataset.tab !== "tab1") section.classList.add("hidden");
+// 	});
+
+// 	initSwiperForTab("tab1");
+
+// 	// Xử lý chuyển tab
+// 	tabs.forEach((tab) => {
+// 		tab.addEventListener("click", function (e) {
+// 			const target = this.getAttribute("href").replace("#", "");
+
+// 			// Ẩn/hiện .home-6-main theo tab
+// 			allMainSections.forEach((section) => {
+// 				if (section.dataset.tab === target) {
+// 					section.classList.remove("hidden");
+// 				} else {
+// 					section.classList.add("hidden");
+// 				}
+// 			});
+
+// 			// Nếu swiper chưa khởi tạo thì khởi tạo
+// 			if (!swipers[target]) {
+// 				initSwiperForTab(target);
+// 			}
+// 		});
+// 	});
+
+// 	// Hàm khởi tạo swiper cho tab cụ thể
+// 	function initSwiperForTab(tabId) {
+// 		const section = document.querySelector(`.home-6-main[data-tab="${tabId}"]`);
+// 		if (!section) return;
+
+// 		const swiperContainer = section.querySelector(".swiper-steps");
+// 		const btnNext = section.querySelector(".btn-next");
+// 		const btnPrev = section.querySelector(".btn-prev");
+
+// 		const swiper = new Swiper(swiperContainer, {
+// 			modules: [Autoplay, Navigation],
+// 			loop: false,
+// 			navigation: {
+// 				nextEl: btnNext,
+// 				prevEl: btnPrev,
+// 			},
+// 			on: {
+// 				slideChange: function () {
+// 					updateActiveStep(swiper.activeIndex, section);
+// 				},
+// 			},
+// 		});
+
+// 		// Click vào step
+// 		const stepElements = section.querySelectorAll(".home-6-steps .step");
+// 		stepElements.forEach((step, index) => {
+// 			step.addEventListener("click", () => {
+// 				swiper.slideTo(index);
+// 				updateActiveStep(index, section);
+// 			});
+// 		});
+
+// 		// Khởi tạo bước đầu tiên
+// 		updateActiveStep(swiper.activeIndex, section);
+
+// 		// Lưu lại swiper
+// 		swipers[tabId] = swiper;
+// 	}
+
+// 	// Hàm cập nhật active cho step trong section cụ thể
+// 	function updateActiveStep(index, section) {
+// 		const steps = section.querySelectorAll(".home-6-steps .step");
+// 		const items = section.querySelectorAll(".home-6-steps .item");
+// 		const titles = section.querySelectorAll(".steps h3");
+// 		const contents = section.querySelectorAll(".home-6-steps .content");
+
+// 		steps.forEach((step, i) => step.classList.toggle("active", i <= index));
+// 		items.forEach((item, i) => item.classList.toggle("active", i <= index));
+// 		titles.forEach((title, i) => title.classList.toggle("active", i <= index));
+// 		contents.forEach((content, i) => content.classList.toggle("active", i === index));
+// 	}
+// });
 
 function swiperHome9() {
 	const swiper = new Swiper(".home-9-swiper", {

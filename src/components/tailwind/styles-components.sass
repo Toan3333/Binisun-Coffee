@@ -89,19 +89,20 @@
 			@apply border-Neutral-White border text-Neutral-White hover:bg-Neutral-White hover:text-Primary-Primary_02
 		&.red
 			@apply bg-Neutral-White  text-Primary-Primary_02 hover:bg-Primary-Primary_01 hover:text-Neutral-White border-none
-
-
-
 	.home-6
 		@apply mt-base
+		.tabslet-content
+			@apply w-full
 		ul.home-6-nav
 			@apply flex items-center gap-5 rem:mb-[30px]
 			li
-				@apply py-3 px-6 border-2 border-Primary-Primary_01 text-Primary-Primary_01 font-bold
+				@apply py-3 px-6 border-2 border-Primary-Primary_01 text-Primary-Primary_01 font-bold cursor-pointer
 				&.active
 					@apply bg-Primary-Primary_01 text-Neutral-White
+				&:hover
+					@apply bg-Primary-Primary_01 text-Neutral-White transition-all ease-linear
 		.home-6-steps
-			@apply rem:mt-[52px] grid grid-cols-6 
+			@apply rem:mt-[52px] grid grid-cols-6 rem:w-[1320px] mx-auto
 			.steps .item:not(:last-child)::before
 				content: url("../img/arrow.png")
 				@apply absolute top-2/4 -translate-y-2/4 right-[-3.6rem] 
@@ -139,18 +140,16 @@
 						@apply w-20 h-20 rounded-full flex-shrink-0 bg-Neutral-100 text-xl font-normal text-Neutral-500-main inline-flex flex-col justify-center items-center relative
 						&.active
 							@apply bg-Primary-Primary_01 text-Neutral-White
-						
-						
-							
-	
 		.col-right
 			.swiper
 				@apply w-full
 @media (max-width: 1023.98px)
 	.home-6
 		@apply mt-base
+		ul.home-6-nav
+			@apply whitespace-nowrap overflow-x-auto w-full px-5
 		.home-6-steps
-			@apply grid-cols-3 gap-5
+			@apply grid-cols-3 gap-5 w-full
 			.steps .item:not(:last-child)::before
 				content: none
 			.steps .step.active:not(:last-child)::before
