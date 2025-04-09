@@ -27,18 +27,25 @@ export function detectCloseElement(ele, ele2, funcRemove) {
 	// overlay-blur
 }
 export function buttonToTop() {
-	let windowHeight = $(window).height();
-	$(document).on("scroll", function () {
-		let scrollTop = $(window).scrollTop();
-		let documentHeight = $(document).height();
-		if (scrollTop + windowHeight > documentHeight - windowHeight) {
-			$(".button-to-top").addClass("active");
+	let lastScrollTop = 0;
+	const $btn = $(".button-to-top");
+
+	$(window).on("scroll", function () {
+		let scrollTop = $(this).scrollTop();
+
+		// Hiện khi cuộn xuống 100px trở lên
+		if (scrollTop > 100 && scrollTop > lastScrollTop) {
+			$btn.addClass("active");
 		} else {
-			$(".button-to-top").removeClass("active");
+			$btn.removeClass("active");
 		}
+
+		lastScrollTop = scrollTop;
 	});
+
+	// Click để cuộn lên đầu trang
 	$(document).on("click", ".button-to-top", function () {
-		$("html, body").animate({ scrollTop: 0 });
+		$("html, body").animate({ scrollTop: 0 }, 400);
 	});
 }
 

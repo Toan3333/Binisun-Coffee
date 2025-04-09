@@ -1,7 +1,10 @@
 @layer components
 	.item-comp
 		@apply flex
-
+	.button-to-top
+		@apply opacity-0 pointer-events-none
+		&.active
+			@apply opacity-100 pointer-events-auto
 	.page-numbers.current span
 		border-image: unset !important
 		@apply border-none #{!important}
