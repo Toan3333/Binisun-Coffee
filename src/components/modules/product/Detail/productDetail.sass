@@ -2,7 +2,10 @@
 	.product-detail-image
 		.swiper
 			@apply h-full
-
+			.product-box
+				@apply py-18 px-24
+				.image
+					@apply img-ratio ratio:pt-[429_347]
 	.product-detail-gallary
 		.wrapper
 			.swiper
@@ -46,6 +49,10 @@
 				@apply pl-5
 				li
 					@apply list-disc marker:text-Neutral-950
+.product-detail-3
+	.swiper-slide
+		.image
+			@apply bg-[#f6f6f6] py-10 px-20
 @media (max-width: 1023.98px)
 	.product-detail
 		.product-detail-main 
