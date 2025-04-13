@@ -7,52 +7,71 @@ section.global-breadcrumb
 				span(class="last") Về chúng tôi
 section.product-detail(class="section-py bg-Neutral-50")
 	.container
-		.product-detail-main(class="flex flex-col lg:flex-row rem:gap-[79px]")
-			.col-left(class="lg:rem:w-[680px] w-full flex flex-col-reverse md:flex-row gap-5" data-index="0")
+		.product-detail-main(class="inline-flex flex-col lg:flex-row rem:gap-[79px]")
+			.col-left(class="lg:rem:w-[680px] lg:rem:h-[560px] w-full flex flex-col-reverse md:flex-row gap-5" data-index="0")
 				.product-detail-gallary(class="xl:w-25 md:rem:w-[150px] relative")
 					.wrapper(class="absolute inset-0 w-full h-full")
 						.swiper.swiper-product-detail-thumb 
 							.swiper-wrapper
 								.swiper-slide 
-									.item(class="w-25 h-25") 
-										img(src="./img/product-2.png", alt="" class="w-full h-full")
+									.item
+										a(class="aspect-1 ratio-contain w-full block") 
+											img(src="./img/product-2.png", alt="" class="w-full h-full ")
 								.swiper-slide 
-									.item(class="w-25 h-25") 
-										img(src="./img/1.jpg", alt="" class="w-full h-full")
+									.item
+										a(class="aspect-1 ratio-contain w-full block") 
+											img(src="./img/product-2.png", alt="" class="w-full h-full ")
 								.swiper-slide 
-									.item(class="w-25 h-25") 
-										img(src="./img/1.jpg", alt="" class="w-full h-full")
+									.item
+										a(class="aspect-1 ratio-contain w-full block") 
+											img(src="./img/product-2.png", alt="" class="w-full h-full ")
 								.swiper-slide 
-									.item(class="w-25 h-25") 
-										img(src="./img/1.jpg", alt="" class="w-full h-full")
+									.item
+										a(class="aspect-1 ratio-contain w-full block") 
+											img(src="./img/product-2.png", alt="" class="w-full h-full object-cover")
 								.swiper-slide 
-									.item(class="w-25 h-25") 
-										img(src="./img/1.jpg", alt="" class="w-full h-full")
+									.item
+										a(class="aspect-1 ratio-contain w-full block") 
+											img(src="./img/product-2.png", alt="" class="w-full h-full object-cover")
 								.swiper-slide 
-									.item(class="w-25 h-25") 
-										img(src="./img/1.jpg", alt="" class="w-full h-full")
+									.item
+										a(class="aspect-1 ratio-contain w-full block") 
+											img(src="./img/product-2.png", alt="" class="w-full h-full object-cover")
 								.swiper-slide 
-									.item(class="w-25 h-25") 
-										img(src="./img/1.jpg", alt="" class="w-full h-full")
-				.product-detail-image(class="lg:w-[calc(100%-5.20833rem-1.04167rem)]  h-full md:w-[calc(100%-7.8125rem-1.04167rem)] ")
+									.item
+										a(class="aspect-1 ratio-contain w-full block") 
+											img(src="./img/product-2.png", alt="" class="w-full h-full object-cover")
+				.product-detail-image(class="lg:w-[calc(100%-5.20833rem-1.04167rem)] md:w-[calc(100%-7.8125rem-1.04167rem)] ")
 					.swiper.swiper-product-detail
 						.swiper-wrapper
 							.swiper-slide
-								.product-box(class="rem:w-[560px] h-full bg-Neutral-White relative")
-									.image(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4") 
-										img(src="./img/product-2.png", alt="")
+								.image
+									a(class=" aspect-1 ratio-contain") 
+										img(src="./img/product-4.png", alt="")
 							.swiper-slide
-								.product-box(class="rem:w-[560px] h-full bg-Neutral-White relative")
-									.image(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4") 
-										img(src="./img/product-2.png", alt="")
+								.image
+									a(class=" aspect-1 ratio-contain") 
+										img(src="./img/product-4.png", alt="")
 							.swiper-slide
-								.product-box(class="rem:w-[560px] h-full bg-Neutral-White relative")
-									.image(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4") 
-										img(src="./img/product-2.png", alt="")
+								.image
+									a(class=" aspect-1 ratio-contain") 
+										img(src="./img/product-4.png", alt="")
 							.swiper-slide
-								.product-box(class="rem:w-[560px] h-full bg-Neutral-White relative")
-									.image(class="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4") 
-										img(src="./img/product-2.png", alt="")
+								.image
+									a(class=" aspect-1 ratio-contain") 
+										img(src="./img/product-4.png", alt="")
+							.swiper-slide
+								.image
+									a(class="img-ratio aspect-1 ratio-contain") 
+										img(src="./img/product-4.png", alt="")
+							.swiper-slide
+								.image
+									a(class="img-ratio aspect-1 ratio-contain") 
+										img(src="./img/product-4.png", alt="")
+							.swiper-slide
+								.image
+									a(class="img-ratio aspect-1 ratio-contain") 
+										img(src="./img/product-4.png", alt="")
 						.arrow-button(class="absolute left-2/4 -translate-x-2/4 top-2/4 -translate-y-2/4 w-full flex items-center justify-between z-20 px-5")
 							.btn.btn-prev.btn-sw-1
 							.btn.btn-next.btn-sw-1
@@ -157,7 +176,7 @@ section.product-detail-3(class="section-py relative")
 					.item
 						.image 
 							a(href="#" class="img-ratio ratio:pt-[440_320]")
-								img(src="./img/product-1.png", alt="")
+								img(src="./img/product-other.png", alt="")
 						.content(class="mt-5 text-center flex flex-col font-secondary")
 							h3(class="text-lg font-bold text-Neutral-950") NATURAL COFFEE
 							.category(class="font-normal") ROBUSTA 80% - ARABICA 20%

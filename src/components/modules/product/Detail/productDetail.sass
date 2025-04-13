@@ -1,21 +1,29 @@
 .product-detail
+	// .col-left
+	// 	.swiper
+	// 		.item
+	// 			@apply 
 	.product-detail-image
 		.swiper
 			@apply h-full
 			.product-box
-				@apply py-18 px-24
+				// @apply py-18 px-24
 				.image
 					@apply img-ratio ratio:pt-[429_347]
 	.product-detail-gallary
+		@apply rem:h-[560px] flex-shrink-0
 		.wrapper
+			@apply h-full
 			.swiper
 				@apply w-full h-full
 				
-		.swiper-slide
-			@apply flex items-center justify-center
-			&.swiper-slide-thumb-active
+			.swiper-slide
+		
 				img
-					@apply border border-Primary-Primary_01
+					@apply border border-transparent  transition-all duration-300
+				&.swiper-slide-thumb-active
+					img
+						@apply border border-Primary-Primary_01 
 	.col-right
 		.product-detail-heading
 			@apply mb-base
@@ -52,12 +60,18 @@
 .product-detail-3
 	.swiper-slide
 		.image
-			@apply bg-[#f6f6f6] py-10 px-20
+			img
+				@apply object-contain
 @media (max-width: 1023.98px)
 	.product-detail
 		.product-detail-main 
+			@apply flex
 			.col-left
 				.product-detail-gallary 
+					@apply h-auto
+					// .wrapper
+					// 	.swiper-slide
+					// 		@apply h-full #{!important}
 					.item
 						@apply w-full h-full
 				.product-detail-image
@@ -81,9 +95,8 @@
 					@apply relative
 				.product-detail-gallary 
 					.item
-						@apply h-[8.2rem]
-						img
-							@apply object-cover
+						@apply h-full
+					
 	.product-detail-2
 		.product-detail-main
 			@apply gap-0

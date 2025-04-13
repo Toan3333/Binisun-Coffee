@@ -178,6 +178,8 @@ function swiperHome3() {
 function swiperCertificate() {
 	const swiper = new Swiper(".certificate-swiper", {
 		slidesPerView: 2,
+		spaceBetween: 12,
+
 		modules: [Autoplay, Navigation],
 		loop: true,
 		autoplay: {
@@ -506,10 +508,10 @@ function swiperProductDetail() {
 		slidesPerView: 3.5,
 		freeMode: true,
 		watchSlidesProgress: true,
-		loop: false,
+		loop: true,
 		breakpoints: {
 			768: {
-				slidesPerView: 3,
+				slidesPerView: 4,
 				spaceBetween: 24,
 				direction: "vertical",
 			},
@@ -519,8 +521,8 @@ function swiperProductDetail() {
 				direction: "vertical",
 			},
 			1200: {
-				spaceBetween: 15,
 				slidesPerView: 5,
+				spaceBetween: 15,
 				direction: "vertical",
 			},
 		},
@@ -528,7 +530,7 @@ function swiperProductDetail() {
 
 	const swiperDetail = new Swiper(main, {
 		spaceBetween: 10,
-		loop: false,
+		loop: true,
 		modules: [Autoplay, Navigation, Thumbs],
 		thumbs: {
 			swiper: swiperThumb,

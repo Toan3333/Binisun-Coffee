@@ -33,8 +33,7 @@ export function buttonToTop() {
 	$(window).on("scroll", function () {
 		let scrollTop = $(this).scrollTop();
 
-		// Hiện khi cuộn xuống 100px trở lên
-		if (scrollTop > 100 && scrollTop > lastScrollTop) {
+		if (scrollTop > 100) {
 			$btn.addClass("active");
 		} else {
 			$btn.removeClass("active");

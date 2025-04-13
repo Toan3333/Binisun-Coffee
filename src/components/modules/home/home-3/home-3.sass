@@ -3,7 +3,7 @@
 	.home-3-text 
 		@apply overflow-hidden relative rem:bottom-[-19px]
 		h1
-			letter-spacing: 64px
+			letter-spacing: 4rem
 			line-height: 1
 			-webkit-text-stroke-width: 2px
 			-webkit-text-stroke-color: rgba(0, 122, 94, 0.50)
@@ -11,7 +11,10 @@
 	.home-3-slide
 		.swiper-slide
 			.image
-				@apply bg-Neutral-White py-10 px-13
+				img
+					@apply object-contain
+
+			
 @media (max-width: 1279.98px)
 	.home-3
 		.home-3-text
@@ -28,3 +31,6 @@
 				letter-spacing: 4px
 
 				@apply text-[3rem]
+			.title-bg
+				font-size: 7vw !important
+				letter-spacing: 4vw !important

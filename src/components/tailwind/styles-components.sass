@@ -1,6 +1,17 @@
 @layer components
+	.product-1
+		.product-1-content
+			h2
+				line-height: normal
 	.item-comp
 		@apply flex
+	.home-2-desc
+		@apply font-secondary
+	.about-1-content
+		.about-1-desc
+			@apply font-secondary
+			.desc
+				@apply flex flex-col gap-3
 	.woocommerce img, .woocommerce-page img
 		@apply h-full #{!important}
 	.button-to-top
@@ -151,6 +162,32 @@
 		.col-right
 			.swiper
 				@apply w-full
+	#form-contact
+		@apply rem:w-[850px]  relative max-md:w-full
+		.carousel__button
+			position: absolute !important
+			top: 0.5rem !important
+			right: 0.5rem !important
+			width: 32px
+			height: 32px
+			background-color: #007a5e
+			svg
+				@apply rem:w-[16px] rem:h-[16px]
+		.contact-form
+			@apply flex flex-col gap-3
+			.contact-form-field
+				@apply relative cursor-pointer
+				&:focus
+					outline: none !important
+				input
+					@apply w-full px-6 py-3 border border-Primary-Primary_02 text-black rem:text-[16px] leading-6 font-normal
+					&:focus
+						outline: none !important
+			.form-textarea
+				textarea
+					@apply border border-Primary-Primary_02
+			.bottom
+				@apply justify-center
 @media (max-width: 1023.98px)
 	.home-6
 		@apply mt-base
