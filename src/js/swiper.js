@@ -211,11 +211,14 @@ function swiperCertificate() {
 
 // function swiperSteps() {
 // }
-const swipers = {}; // Quản lý swiper theo tabId
+const swipers = {}; // Quản lý Swiper cho từng tabId
 
 function initSwiper(tabId) {
 	const swiperContainer = document.querySelector(`#${tabId} .swiper-steps`);
 	if (!swiperContainer) return;
+
+	// Tránh khởi tạo lại
+	if (swipers[tabId]) return;
 
 	swipers[tabId] = new Swiper(swiperContainer, {
 		modules: [Autoplay, Navigation],
@@ -226,70 +229,72 @@ function initSwiper(tabId) {
 			nextEl: `#${tabId} .btn-next`,
 			prevEl: `#${tabId} .btn-prev`,
 		},
+		on: {
+			slideChange: function () {
+				updateActiveStep(tabId, this.realIndex);
+			},
+		},
 	});
+
+	// Đặt step đầu tiên là active khi khởi tạo xong
+	updateActiveStep(tabId, 0);
 }
-
-// Gọi khi tabs được kích hoạt
-function handleTabShow(tabId) {
-	if (!swipers[tabId]) {
-		initSwiper(tabId);
-	}
-}
-
-document.querySelectorAll(".tabslet-tab li a").forEach((tabLink) => {
-	tabLink.addEventListener("click", (e) => {
-		e.preventDefault();
-
-		const href = tabLink.getAttribute("href"); // eg. "#tab2"
-		const tabId = href.substring(1); // remove the #
-
-		// Show tab manually (tuỳ bạn nếu dùng plugin tabslet)
-		document.querySelectorAll(".tabslet-content").forEach((el) => {
-			el.classList.remove("active");
-		});
-		document.querySelector(href).classList.add("active");
-
-		// Call init swiper
-		handleTabShow(tabId);
-	});
-});
-
-// Bắt click vào các step để chuyển slide
-document.querySelectorAll(".tabslet-content").forEach((tab) => {
-	const tabId = tab.id;
-	const steps = tab.querySelectorAll(".home-6-steps .step");
-
-	steps.forEach((step, index) => {
-		step.addEventListener("click", () => {
-			if (!swipers[tabId]) {
-				initSwiper(tabId);
-
-				setTimeout(() => {
-					swipers[tabId].slideTo(index);
-					updateActiveStep(tabId, index);
-				}, 100); // delay để Swiper kịp render DOM
-			} else {
-				swipers[tabId].slideTo(index);
-				updateActiveStep(tabId, index);
-			}
-		});
-	});
-});
 
 function updateActiveStep(tabId, activeIndex) {
 	const stepEls = document.querySelectorAll(`#${tabId} .step`);
 	stepEls.forEach((step, idx) => {
-		if (idx === activeIndex) {
-			step.classList.add("active");
-		} else {
-			step.classList.remove("active");
-		}
+		step.classList.toggle("active", idx === activeIndex);
 	});
 }
 
-// Auto init tab1 swiper khi trang load
+function handleTabShow(tabId) {
+	// Ẩn toàn bộ tab
+	document.querySelectorAll(".home-6 .tabslet-content").forEach((el) => {
+		el.classList.remove("active");
+	});
+	// Hiện tab đang chọn
+	const currentTab = document.querySelector(`#${tabId}`);
+	if (currentTab) currentTab.classList.add("active");
+
+	// Khởi tạo Swiper nếu chưa có
+	initSwiper(tabId);
+
+	// Cập nhật step active hiện tại nếu có
+	const currentIndex = swipers[tabId]?.realIndex || 0;
+	updateActiveStep(tabId, currentIndex);
+}
+
+// DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-	handleTabShow("tab1");
+	// Bắt sự kiện chuyển tab
+	document.querySelectorAll(".home-6 .tabslet-tab li a").forEach((tabLink) => {
+		tabLink.addEventListener("click", (e) => {
+			e.preventDefault();
+			const tabId = tabLink.getAttribute("href").substring(1);
+			handleTabShow(tabId);
+		});
+	});
+
+	// Khởi tạo click vào step để chuyển slide
+	document.querySelectorAll(".home-6 .tabslet-content").forEach((tab) => {
+		const tabId = tab.id;
+		const steps = tab.querySelectorAll(".home-6-steps .step");
+
+		steps.forEach((step, index) => {
+			step.addEventListener("click", () => {
+				if (swipers[tabId]) {
+					swipers[tabId].slideTo(index);
+					updateActiveStep(tabId, index);
+				}
+			});
+		});
+	});
+
+	// Kích hoạt tab đầu tiên mặc định
+	const firstTabId = document.querySelector(".home-6 .tabslet-content")?.id;
+	if (firstTabId) {
+		handleTabShow(firstTabId);
+	}
 });
 
 // document.addEventListener("DOMContentLoaded", function () {

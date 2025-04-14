@@ -3,6 +3,12 @@
 		@apply py-5 px-8 bg-Neutral-White shadow-Dropshadow-Light flex flex-col rem:gap-[14px]
 		li
 			@apply rem:pb-[14px] border-b border-b-[#D9D9D9] last:border-b-0
+			&[class*='current']
+				&>a
+					@apply text-Primary-Primary_01
+			.menu-item-464
+				a
+					@apply text-Primary-Primary_01
 			a
 				@apply text-xl font-medium text-Primary-Primary_02
 				&.active
@@ -15,6 +21,11 @@
 			@apply border-none #{!important} 
 		.menu-pagination
 			@apply flex items-center gap-3
+		.menu-item
+			h3
+				@apply text-Primary-Primary_02
+
+				
 
 @media (max-width: 1279.98px)
 	.menu

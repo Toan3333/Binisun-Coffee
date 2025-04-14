@@ -23,10 +23,27 @@ $(document).ready(function () {
 	// clickTabMoveLine();
 	indicatorSlide();
 	handleTitleTab();
-
 	watchObserveInputFile();
 	handleTitleTab2();
 	loadMoreJobs();
+
+	// Lựa chọn tất cả các textarea có placeholder
+	const textareas = document.querySelectorAll("textarea");
+
+	textareas.forEach(function (textarea) {
+		// Lưu giá trị placeholder ban đầu
+		const placeholder = textarea.placeholder;
+
+		// Khi textarea nhận focus, xóa placeholder
+		textarea.addEventListener("focus", function () {
+			this.placeholder = ""; // Xóa placeholder khi click vào textarea
+		});
+
+		// Khi textarea mất focus, khôi phục lại placeholder
+		textarea.addEventListener("blur", function () {
+			this.placeholder = placeholder; // Khôi phục placeholder ban đầu
+		});
+	});
 
 	Fancybox.bind("[data-fancybox]", {
 		dragToClose: false,
@@ -93,6 +110,23 @@ function initTabsWithLine(tabWrapperSelector) {
 initTabsWithLine(".tabslet-tab.home-7-nav");
 initTabsWithLine(".tabslet-tab.product-detail-nav");
 
+function watchObserveInputFile() {
+	$('input[name="file-cv"]').on("change", function () {
+		const file = this.files[0];
+		if (file) {
+			const fileName = file.name;
+			const fileNameDisplay = $("<span>", {
+				class: "file-name text-sm text-body-text-66 mt-1 block",
+				text: "File CV: " + fileName,
+			});
+
+			$(this).closest(".form-input-file").find(".file-name").remove();
+
+			$(this).closest(".form-input-file").append(fileNameDisplay);
+		}
+	});
+}
+
 function loadMoreJobs() {
 	const btnMore = document.querySelector(".more");
 	if (!btnMore) return;
@@ -115,23 +149,6 @@ function loadMoreJobs() {
 	btnMore.addEventListener("click", handleLoadMore);
 
 	btnMore.style.display = hiddenRows.length > 0 ? "flex" : "none";
-}
-
-function watchObserveInputFile() {
-	$('input[name="file-cv"]').on("change", function () {
-		const file = this.files[0];
-		if (file) {
-			const fileName = file.name;
-			const fileNameDisplay = $("<span>", {
-				class: "file-name text-sm text-body-text-66 mt-1 block",
-				text: "File CV: " + fileName,
-			});
-
-			$(this).closest(".form-input-file").find(".file-name").remove();
-
-			$(this).closest(".form-input-file").append(fileNameDisplay);
-		}
-	});
 }
 
 export function indicatorSlide() {
