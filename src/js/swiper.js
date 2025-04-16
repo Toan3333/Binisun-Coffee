@@ -146,9 +146,8 @@ function swiperHome3() {
 	const swiper = new Swiper(".home-3-swiper", {
 		slidesPerView: 2,
 		spaceBetween: 16,
-
 		modules: [Autoplay, Navigation],
-		loop: true,
+		loop: false,
 		autoplay: {
 			delay: 3000,
 			disableOnInteraction: false,
@@ -158,7 +157,6 @@ function swiperHome3() {
 			nextEl: ".home-3 .btn-next",
 			prevEl: ".home-3 .btn-prev",
 		},
-
 		breakpoints: {
 			768: {
 				slidesPerView: 2,
@@ -172,7 +170,32 @@ function swiperHome3() {
 				spaceBetween: 24,
 			},
 		},
+		on: {
+			init: function () {
+				disableNavIfNotEnough(this); // Gọi lúc khởi tạo
+			},
+			resize: function () {
+				disableNavIfNotEnough(this); // Gọi lại nếu resize
+			},
+		},
 	});
+
+	function disableNavIfNotEnough(swiperInstance) {
+		const totalSlides = swiperInstance.slides.length;
+		const currentSlidesPerView = swiperInstance.params.slidesPerView;
+
+		const prevBtn = document.querySelector(".home-3 .btn-prev");
+		const nextBtn = document.querySelector(".home-3 .btn-next");
+
+		// Nếu tổng số slide nhỏ hơn hoặc bằng số cần hiển thị
+		if (totalSlides <= currentSlidesPerView) {
+			prevBtn.style.display = "none";
+			nextBtn.style.display = "none";
+		} else {
+			prevBtn.style.display = "";
+			nextBtn.style.display = "";
+		}
+	}
 }
 
 function swiperCertificate() {
@@ -183,7 +206,7 @@ function swiperCertificate() {
 		modules: [Autoplay, Navigation],
 		loop: true,
 		autoplay: {
-			delay: 3000,
+			delay: 3500,
 			disableOnInteraction: false,
 		},
 		speed: 1500,
@@ -512,6 +535,8 @@ function swiperProductDetail() {
 		spaceBetween: 12,
 		slidesPerView: 3.5,
 		freeMode: true,
+		observer: true,
+		observeParents: true,
 		watchSlidesProgress: true,
 		loop: true,
 		breakpoints: {
@@ -536,6 +561,8 @@ function swiperProductDetail() {
 	const swiperDetail = new Swiper(main, {
 		spaceBetween: 10,
 		loop: true,
+		observer: true,
+		observeParents: true,
 		modules: [Autoplay, Navigation, Thumbs],
 		thumbs: {
 			swiper: swiperThumb,
@@ -560,7 +587,8 @@ function swiperProductDetail() {
 
 function swiperProductOther() {
 	const swiper = new Swiper(".product-detail-other", {
-		slidesPerView: 2,
+		slidesPerView: 1,
+		spaceBetween: 16,
 		modules: [Autoplay, Navigation],
 		loop: true,
 		autoplay: {

@@ -1,4 +1,10 @@
 @layer components
+
+	.certificate 
+		.image
+			a
+				&:focus-visible
+					outline: none !important
 	.fancybox__content :focus:not(.carousel__button.is-close)
 		outline: unset !important
 	.product-1
@@ -61,8 +67,20 @@
 			text-overflow: ellipsis
 			@apply w-full h-full rounded-full border border-transparent px-5 font-light absolute-full mt-0 bg-white text-Primary-Primary_01
 			@apply block px-5 line-clamp-1 place-content-center whitespace-nowrap
+	#form-contact
+		@apply font-secondary
+		.form-contact-heading
+			h2
+				@apply mb-0 text-Primary-Primary_01
+		.form-contact-content
+			.contact-form-field
+				input
+					@apply border-Primary-Primary_01 #{!important}
+			.form-textarea 
+				textarea
+					@apply w-full border-Primary-Primary_01 py-3 px-6 #{!important}
 	#form-requirement
-		@apply rem:w-[850px]  relative max-md:w-full
+		@apply rem:w-[850px]  relative max-md:w-full p-5 font-secondary
 		.carousel__button
 			position: absolute !important
 			top: 0.5rem !important
@@ -73,7 +91,7 @@
 			svg
 				@apply rem:w-[16px] rem:h-[16px]
 		h3
-			@apply text-5xl text-Primary-Primary_01 text-center font-bold
+			@apply text-6xl text-Primary-Primary_01 text-center font-bold mb-5 #{!important}
 	form.wpcf7-form.submitting
 		button
 			&[type="submit"]
@@ -221,3 +239,4 @@
 				.content
 					h3
 						@apply text-[14px]
+	
