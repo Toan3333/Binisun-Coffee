@@ -195,31 +195,41 @@ export function indicatorSlide() {
 
 export function countUpInit() {
 	const countUpElements = document.querySelectorAll(".countup");
-	let countUp;
 
 	countUpElements.forEach((element) => {
-		let targetNumber = element.getAttribute("data-number");
-
-		// Kiểm tra nếu có dấu "+"
+		let original = element.getAttribute("data-number")?.trim() || "";
+		let prefix = "";
+		let targetNumber = "";
 		let suffix = "";
-		if (targetNumber.includes("+")) {
-			targetNumber = targetNumber.replace("+", ""); // Loại bỏ dấu cộng
-			suffix = "+"; // Đặt dấu cộng làm suffix
+
+		// Tách dạng "90 - 100%", "3000+", "100%"
+		const match = original.match(/^(.*?-\s*)?(\d+(?:[.,]?\d+)?)([%+])?$/);
+
+		if (!match) {
+			console.warn("Không parse được:", original);
+			return;
 		}
 
-		// Kiểm tra nếu là phần trăm và loại bỏ dấu "%"
-		if (targetNumber.includes("%")) {
-			targetNumber = targetNumber.replace("%", "");
-			suffix = "%"; // Thêm dấu phần trăm vào suffix
+		prefix = match[1] || "";
+		targetNumber = match[2];
+		suffix = match[3] || "";
+
+		let targetEl = element;
+
+		// Nếu có prefix thì inject HTML mới và target vào span
+		if (prefix) {
+			element.innerHTML = `${prefix}<span class="countup-number">0</span>${suffix}`;
+			targetEl = element.querySelector(".countup-number");
+		} else {
+			element.textContent = "0"; // Reset nội dung ban đầu
 		}
 
-		// Khởi tạo CountUp với giá trị số
-		countUp = new CountUp(element, targetNumber, {
+		const countUp = new CountUp(targetEl, targetNumber, {
 			duration: 4,
 			separator: ".",
 			decimal: ",",
 			enableScrollSpy: true,
-			suffix: suffix, // Thêm suffix là dấu cộng hoặc dấu phần trăm
+			suffix: prefix ? "" : suffix,
 		});
 
 		if (!countUp.error) {
@@ -228,13 +238,4 @@ export function countUpInit() {
 			console.error(countUp.error);
 		}
 	});
-
-	return {
-		reset: () => {
-			countUp.reset();
-		},
-		start: () => {
-			countUp.start();
-		},
-	};
 }
