@@ -1,4 +1,5 @@
 .about-3
+	@apply overflow-hidden
 	.col-left
 		.about-3-items
 			@apply py-5 border-b border-b-Neutral-200 first:border-t border-t-Neutral-200
@@ -25,6 +26,12 @@
 						@apply text-[#C58600]
 			.item
 				@apply flex items-center gap-5 mb-5
+	.col-right
+		.image
+			@apply rem:mt-[27px]
+			a
+				img
+					@apply object-contain
 @media (max-width: 767.98px)
 	.about-3
 		.col-right

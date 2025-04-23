@@ -258,7 +258,6 @@ function initSwiper(tabId) {
 			},
 		},
 	});
-
 	// Đặt step đầu tiên là active khi khởi tạo xong
 	updateActiveStep(tabId, 0);
 }
@@ -270,26 +269,42 @@ function updateActiveStep(tabId, activeIndex) {
 	});
 }
 
+function updateStepImage(tabId, activeIndex) {
+	const stepEls = document.querySelectorAll(`#${tabId} .step`);
+	const imgEl = document.querySelector(
+		`#${tabId} #step-image, #${tabId} #step-image2, #${tabId} #step-image3`
+	);
+	if (!stepEls.length || !imgEl) return;
+
+	const newImg = stepEls[activeIndex]?.dataset.img;
+	if (newImg) imgEl.src = newImg;
+}
+
 function handleTabShow(tabId) {
-	// Ẩn toàn bộ tab
+	// 1. Ẩn toàn bộ tab
 	document.querySelectorAll(".home-6 .tabslet-content").forEach((el) => {
 		el.classList.remove("active");
 	});
-	// Hiện tab đang chọn
+
+	// 2. Hiện tab đang chọn
 	const currentTab = document.querySelector(`#${tabId}`);
 	if (currentTab) currentTab.classList.add("active");
 
-	// Khởi tạo Swiper nếu chưa có
-	initSwiper(tabId);
+	// 3. Kiểm tra nếu Swiper chưa khởi tạo, thì khởi tạo
+	if (!swipers[tabId]) {
+		initSwiper(tabId);
+	}
 
-	// Cập nhật step active hiện tại nếu có
-	const currentIndex = swipers[tabId]?.realIndex || 0;
-	updateActiveStep(tabId, currentIndex);
+	// 4. Cập nhật lại Swiper ngay lập tức, không có delay
+	const swiperInstance = swipers[tabId];
+	if (swiperInstance) {
+		swiperInstance.update(); // Cập nhật Swiper sau khi DOM đã thay đổi
+		swiperInstance.slideTo(0); // Đảm bảo slide đầu tiên luôn active
+		updateActiveStep(tabId, 0); // Cập nhật bước active cho bước đầu tiên
+	}
 }
 
-// DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-	// Bắt sự kiện chuyển tab
 	document.querySelectorAll(".home-6 .tabslet-tab li a").forEach((tabLink) => {
 		tabLink.addEventListener("click", (e) => {
 			e.preventDefault();
@@ -298,7 +313,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
-	// Khởi tạo click vào step để chuyển slide
 	document.querySelectorAll(".home-6 .tabslet-content").forEach((tab) => {
 		const tabId = tab.id;
 		const steps = tab.querySelectorAll(".home-6-steps .step");
@@ -308,12 +322,12 @@ document.addEventListener("DOMContentLoaded", () => {
 				if (swipers[tabId]) {
 					swipers[tabId].slideTo(index);
 					updateActiveStep(tabId, index);
+					updateStepImage(tabId, index); // ⬅️ Cập nhật ảnh khi click step
 				}
 			});
 		});
 	});
 
-	// Kích hoạt tab đầu tiên mặc định
 	const firstTabId = document.querySelector(".home-6 .tabslet-content")?.id;
 	if (firstTabId) {
 		handleTabShow(firstTabId);

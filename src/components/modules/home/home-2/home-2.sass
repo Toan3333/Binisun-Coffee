@@ -1,12 +1,18 @@
 .home-2
 	@apply relative 
 	.home-2-list
-		@apply bg-Primary-Primary_01 grid lg:grid-cols-4 grid-cols-2 relative z-10 xl:py-16 xl:rem:px-[260px] px-5 py-10 gap-base
+		@apply bg-Primary-Primary_01 grid lg:grid-cols-4 grid-cols-2 relative z-10 xl:py-10 xl:rem:px-[260px] px-5 py-10 gap-base overflow-hidden
+		&::before
+			content: url("https://binisuncoffee.webcanhcam.vn/wp-content/uploads/2025/04/home-2-bg.png")
+			@apply absolute w-full h-full top-0 left-0
 		.home-2-item
 			@apply text-Neutral-White flex items-center flex-col justify-center text-center
 			.number
 				@apply text-6xl font-bold 
 			h3
 				@apply text-lg font-normal px-6 font-secondary
-	
+.home-2-content
+	.home-2-desc
+		.desc
+			@apply flex flex-col gap-3
 	
